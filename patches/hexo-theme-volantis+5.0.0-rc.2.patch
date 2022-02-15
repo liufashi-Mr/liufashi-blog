@@ -1,0 +1,13 @@
+diff --git a/node_modules/hexo-theme-volantis/_config.yml b/node_modules/hexo-theme-volantis/_config.yml
+index 2672946..1128131 100755
+--- a/node_modules/hexo-theme-volantis/_config.yml
++++ b/node_modules/hexo-theme-volantis/_config.yml
+@@ -433,7 +433,7 @@ comments:
+ 
+ ############################### Sidebar ############################### > start
+ sidebar:
+-  position: right # left right
++  position: left # left right
+   # 主页、分类、归档等独立页面
+   for_page: [blogger, category, tagcloud, donate]
+   # layout: docs/post 这类文章页面
