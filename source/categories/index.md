@@ -2,5 +2,6 @@
 layout: category
 index: true
 title: 所有分类
-sidebar: [toc]
+cover: true
+sidebar: [blogger, category, tagcloud, webinfo]
 ---

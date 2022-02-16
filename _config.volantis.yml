@@ -3,13 +3,13 @@ navbar:
   visiable: always # always, auto
   backgroundx: linear-gradient(to top, "#fff1eb" 0%, "#ace0f9" 100%)
   logo: # choose [img] or [icon + title]
-    img: /img/avatar.jpg
+    img: /img/avatar-circle.png
     icon:
     title: 
   menu:
     # The following can be written in `blog/source/_data/menu.yml`
     - name: 主页
-      icon: fas fa-rss
+      icon: fas fa-home
       url: /
     - name: 分类
       icon: fas fa-folder-open
@@ -17,12 +17,24 @@ navbar:
     - name: 标签
       icon: fas fa-tags
       url: tags/
+    - name: 直达
+      icon: iconfont icon-gaosu
+      rows:
+        - name: github
+          icon: fab fa-github
+          url: https://github.com/liufashi-code?tab=repositories
+        - name: gitee
+          icon: iconfont icon-gitee
+          url: https://gitee.com/liu-fashi
+        - name: csdn
+          icon: iconfont icon-csdn
+          url: https://blog.csdn.net/weixin_44134674?type=blog
+        - name: 我的项目
+          icon: iconfont icon-xiangmu
+          url: http://expo.liufashi.top
     - name: 归档
       icon: fas fa-archive
       url: archives/
-    - name: 友链
-      icon: fas fa-link
-      url: friends/
     - name: 背景音乐
       icon: fas fa-compact-disc
     - name: 更多
@@ -30,24 +42,12 @@ navbar:
       rows:
         - name: 主题源码
           url: https://github.com/volantis-x/hexo-theme-volantis/
-        - name: 更新日志
-          url: https://github.com/volantis-x/hexo-theme-volantis/releases/
+        - name: 本站源码
+          url: https://github.com/liufashi-code/liufashi-blog
         - name: hr
-        - name: 有疑问？
-          rows:
-            - name: 看 FAQ
-              url: faqs/
-            - name: 看 本站源码
-              url: https://github.com/volantis-x/volantis-docs/
-            - name: 提 Issue
-              url: https://github.com/volantis-x/hexo-theme-volantis/issues/
-        - name: hr
-        - name: 公告和测试博文
-          url: archives/
-        - name: 示例博客
-          url: examples/
-        - name: 特别感谢
-          url: contributors/
+        - name: 友链
+          icon: fas fa-link
+          url: friends/
   search: 搜索 # Search bar placeholder
 custom_css:
   sidebar:
@@ -190,15 +190,12 @@ rightmenu:
     [
       home,
       hr,
-      help,
-      examples,
-      contributors,
-      hr,
       source_docs,
       source_theme,
       hr,
       print,
       darkmode,
+      friends,
       music,
     ]
   ### 可选功能项 ###
@@ -209,72 +206,55 @@ rightmenu:
     # js:                 # 自定义 js ，可用于修饰打印样式~， 右键剔除了对 Jquery 的依赖，所以此处你只能使用原生 js
     #  - document.querySelector('article#comments').remove()  # 移除评论
   darkmode: # 需开启 plugins.darkmodejs
-    name: 暗黑模式
+    name: 开/关 灯
     icon: fa fa-moon
   customPicUrl: # 右键的图片复制：只有 Chrome 支持，且只支持 PNG 格式的图片。
     enable: false # 如果使用了对象存储且开启了自适应 Webp，那么可以提供额外的链接用以替换图片的访问地址
     old: #https://static.inkss.cn/img/article/
     new: #https://cdn.jsdelivr.net/gh/inkss/inkss-cdn@master/img/article/
   ### 自定义菜单 ###
-  help:
-    name: 常见问题
-    icon: fa fa-question
-    url: https://volantis.js.org/faqs/
-  examples:
-    name: 示例博客
-    icon: fa fa-rss
-    url: https://volantis.js.org/examples/
-  contributors:
-    name: 加入社区
-    icon: fa fa-fan fa-spin
-    url: https://volantis.js.org/contributors/
   source_docs:
     name: 本站源码
     icon: fa fa-code-branch
-    url: https://github.com/volantis-x/volantis-docs/
+    url: https://github.com/liufashi-code/liufashi-blog
   source_theme:
     name: 主题源码
     icon: fa fa-code-branch
     url: https://github.com/volantis-x/hexo-theme-volantis/
+  friends: 
+    name: 友链
+    icon: fas fa-link
+    url: friends/       
 site_footer:
   # layout of footer: [aplayer, social, license, info, copyright]
-  layout: [aplayer, social, license, info, copyright]
-  social:
-    - icon: fas fa-rss
-      url: atom.xml
-    - icon: fas fa-envelope
-      url: mailto:me@xaoxuu.com
-    - icon: fab fa-github
-      url: https://github.com/xaoxuu
-    - icon: fas fa-headphones-alt
-      url: https://music.163.com/#/user/home?id=63035382
-  copyright: "[Copyright © 2017-2021 XXX](/)"
-  # You can add your own property here. (Support markdown, for example: br: '<br>')
-  br: "<br>"
+  title: record technology, record life
 cover:
   height_scheme: full # full, half
+  layout_scheme: dock
+  title: 'liufashi-blogs'
+  jinrishici: true
   scheme: search # search (搜索), dock (坞), featured (精选), focus (焦点)
   display:
     home: true
-    archive: false
+    archive: true
     others: false # can be written in front-matter 'cover: true'
   features:
     - name: 主页
       icon: #
-      img: /media/twemoji/assets/svg/1f5c3.svg # https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f5c3.svg
-      url: /v4/getting-started/
+      img: /img/blog.svg # https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f5c3.svg
+      url: /
     - name: 分类
       icon: #
-      img: /media/twemoji/assets/svg/1f516.svg #  https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f516.svg
-      url: faqs/
+      img: /img/categories.svg #  https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f516.svg
+      url: categories/
     - name: 标签
       icon: #
-      img: /media/twemoji/assets/svg/1f396.svg #  https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f396.svg
-      url: /examples/
+      img: /img/tags.svg #  https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f396.svg
+      url: tags/
     - name: 归档
       icon: #
-      img: /media/twemoji/assets/svg/1f389.svg #  https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f389.svg
-      url: /contributors/
+      img: /img/archives.svg #  https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f389.svg
+      url: archives/
 # 文章布局
 article:
   # 文章列表页面的文章卡片布局方案
@@ -416,14 +396,14 @@ sidebar:
       title: LIUFASHI
       jinrishici: liufashi-blogs # Poetry Today. You can set a string, and it will be displayed when loading fails.
       social: 
-        - icon: fas fa-rss
-          url: atom.xml
+        - icon: fas fa-home
+          url: /
         - icon: fas fa-envelope
-          url: mailto:me@xaoxuu.com
+          url: mailto:1325178274@qq.com
         - icon: fab fa-github
-          url: https://github.com/xaoxuu
-        - icon: fas fa-headphones-alt
-          url: https://music.163.com/#/user/home?id=63035382
+          url: https://github.com/liufashi-code?tab=repositories
+        - icon: iconfont icon-my
+          url: about/
     # ---------------------------------------
     # category widget
     category:
