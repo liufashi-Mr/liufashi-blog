@@ -1,12 +1,14 @@
 # 注意事项：建议规范全站路径 URL 最后带一个 "/" 例如 "about/"
 navbar:
+  visiable: always # always, auto
+  backgroundx: linear-gradient(to top, "#fff1eb" 0%, "#ace0f9" 100%)
   logo: # choose [img] or [icon + title]
-    img:
+    img: /img/avatar.jpg
     icon:
-    title: liufashi-blogs
+    title: 
   menu:
     # The following can be written in `blog/source/_data/menu.yml`
-    - name: 博客
+    - name: 主页
       icon: fas fa-rss
       url: /
     - name: 分类
@@ -49,7 +51,8 @@ navbar:
   search: 搜索 # Search bar placeholder
 custom_css:
   sidebar:
-    effect: [blur] # [shadow, floatable, blur]
+    position: left # left right
+    effect: [shadow, blur] # [shadow, floatable, blur]
   navbar:
     height: 64px
     effect: [shadow, blur] # [shadow, floatable, blur]
@@ -255,6 +258,23 @@ cover:
     home: true
     archive: false
     others: false # can be written in front-matter 'cover: true'
+  features:
+    - name: 主页
+      icon: #
+      img: /media/twemoji/assets/svg/1f5c3.svg # https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f5c3.svg
+      url: /v4/getting-started/
+    - name: 分类
+      icon: #
+      img: /media/twemoji/assets/svg/1f516.svg #  https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f516.svg
+      url: faqs/
+    - name: 标签
+      icon: #
+      img: /media/twemoji/assets/svg/1f396.svg #  https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f396.svg
+      url: /examples/
+    - name: 归档
+      icon: #
+      img: /media/twemoji/assets/svg/1f389.svg #  https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f389.svg
+      url: /contributors/
 # 文章布局
 article:
   # 文章列表页面的文章卡片布局方案
@@ -369,23 +389,11 @@ article:
 #   pjaxReload: true # 是否 pjax 重载 默认 true; 设置为 false 时 确保所有页面都含有该小部件
 sidebar:
   # 主页、分类、归档等独立页面
-  for_page: [toc, blogger, category, webinfo, tagcloud, donate]
+  for_page: [blogger, category, tagcloud, webinfo]
   # layout: docs/post 这类文章页面
   for_post: [toc]
   # 侧边栏组件库
   widget_library:
-    # ---------------------------------------
-    # blogger info widget
-    blogger:
-      class: blogger
-      display: [desktop, mobile] # [desktop, mobile]
-      avatar: https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png
-      shape: rectangle # circle, rectangle
-      url: /about/
-      title:
-      subtitle:
-      jinrishici: true # Poetry Today. You can set a string, and it will be displayed when loading fails.
-      social: true
     # ---------------------------------------
     # toc widget (valid only in articles)
     toc:
@@ -397,6 +405,25 @@ sidebar:
       list_number: false
       min_depth: 2
       max_depth: 5
+    # ---------------------------------------
+    # blogger info widget
+    blogger:
+      class: blogger
+      display: [desktop, mobile] # [desktop, mobile]
+      avatar: /img/avatar.jpg
+      shape: circle # circle, rectangle
+      url: /about/
+      title: LIUFASHI
+      jinrishici: liufashi-blogs # Poetry Today. You can set a string, and it will be displayed when loading fails.
+      social: 
+        - icon: fas fa-rss
+          url: atom.xml
+        - icon: fas fa-envelope
+          url: mailto:me@xaoxuu.com
+        - icon: fab fa-github
+          url: https://github.com/xaoxuu
+        - icon: fas fa-headphones-alt
+          url: https://music.163.com/#/user/home?id=63035382
     # ---------------------------------------
     # category widget
     category:
@@ -422,13 +449,13 @@ sidebar:
       end_color: '#555'
     # ---------------------------------------
     # qrcode widget
-    donate:
-      class: qrcode
-      display: [desktop, mobile] # [desktop, mobile]
-      height: 64px  # Automatic height if not set
-      images:
-        - https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/qrcode/github@volantis.png
-        - https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/qrcode/github@volantis.png
+    # donate:
+    #   class: qrcode
+    #   display: [desktop, mobile] # [desktop, mobile]
+    #   height: 64px  # Automatic height if not set
+    #   images:
+    #     - https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/qrcode/github@volantis.png
+    #     - https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/qrcode/github@volantis.png
     # ---------------------------------------
     # webinfo widget
     webinfo:
@@ -464,13 +491,6 @@ sidebar:
           friendlyShow: true    # 更友好的时间显示
           text: '最后活动时间：'
           unit: '日'
-category:
-  class: category
-  display: [desktop] # [desktop, mobile]
-  header:
-    icon: fas fa-folder-open
-    title: 文章分类
-    url: /blog/categories/
 comments:
   title: <i class='fas fa-comments'></i> 评论
   subtitle:
@@ -482,12 +502,12 @@ comments:
 plugins:
   parallax:
     enable: true
-    position: cover       # cover: sticky on the cover.   fixed: Fixed as background for the site.
+    position: fixed       # cover: sticky on the cover.   fixed: Fixed as background for the site.
     shuffle: true         # shuffle playlist
     duration: 10000       # Duration (ms)
     fade: 1500            # fade duration (ms) (Not more than 1500)
     images:               # For personal use only. At your own risk if used for commercial purposes !!!
-      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper/abstract/41F215B9-261F-48B4-80B5-4E86E165259E.jpeg
+      - /img/blog-bg.jpeg
   code_highlight: highlightjs # highlightjs or prismjs
   # highlight.js
   highlightjs:
