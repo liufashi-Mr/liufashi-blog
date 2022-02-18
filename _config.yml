@@ -103,9 +103,9 @@ theme: volantis
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: git@github.com:liufashi-code/liufashi-blog.git #https://bitbucket.org/JohnSmith/johnsmith.bitbucket.io
-  branch: master
-  message:
+  # repo: git@github.com:liufashi-code/liufashi-blog.git #https://bitbucket.org/JohnSmith/johnsmith.bitbucket.io
+  # branch: master
+  # message:
 import:
   meta:
     - <meta name="msapplication-TileColor" content="#ffffff">
