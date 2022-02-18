@@ -64,6 +64,25 @@ custom_css:
     border: 2px
     color: "#2196f3"
     hover: "#ff5722"
+  fontfamily:
+    logofont:
+      fontfamily: '"Varela Round", "PingFang SC", "Microsoft YaHei", Helvetica, Arial'
+      name: 'Varela Round'
+      url: https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf
+      weight: normal
+      style: normal
+    bodyfont:
+      fontfamily: 'UbuntuMono, "PingFang SC", "Microsoft YaHei", Helvetica, Arial'
+      name: 'UbuntuMono'
+      url: https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf
+      weight: normal
+      style: normal
+    codefont:
+      fontfamily: 'Menlo, Monaco'
+      name: 'Monaco'
+      url: https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/Monaco/Monaco.ttf
+      weight: normal
+      style: normal
   cursor:
     enable: true
     text: https://cdn.jsdelivr.net/gh/inkss/common@master/cursor/text.png
@@ -523,18 +542,17 @@ plugins:
     # Required
     server: netease # netease, tencent, kugou, xiami, baidu
     type: playlist # song, playlist, album, search, artist
-    id: 2122703724 # song id / playlist id / album id / search keyword
-    # Optional
+    mini: false
+    id: 7296908970 # song id / playlist id / album id / search keyword
     fixed: false # enable fixed mode
-    theme: "#1BCDFC" # main color
-    preload: auto
+    theme: "#FADFA3" # main color
     mutex: true
-    autoplay: true # audio autoplay
-    lrcType: 3
-    order: random # player play order, values: 'list', 'random'
+    preload: metadata
     loop: all # player loop play, values: 'all', 'one', 'none'
-    volume: 0.7 # default volume, notice that player will remember user setting, default volume will not work after user set volume themselves
-    list_max_height: 320px # list max height
+    order: random # player play order, values: 'list', 'random'
+    autoplay: true # audio autoplay
+    volume: 5 # default volume, notice that player will remember user setting, default volume will not work after user set volume themselves
+    list_max_height: 340px # list max height
     list_folded: true
   parallax:
     enable: true

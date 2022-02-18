@@ -13,8 +13,10 @@
     "version": "5.4.1"
   },
   "dependencies": {
+    "busuanzi": "^2.3.0",
     "giscus": "0.0.9",
     "hexo": "^5.0.0",
+    "hexo-deployer-git": "^3.0.0",
     "hexo-generator-archive": "^1.0.0",
     "hexo-generator-category": "^1.0.0",
     "hexo-generator-index": "^2.0.0",
@@ -28,6 +30,7 @@
     "hexo-server": "^2.0.0",
     "hexo-theme-landscape": "^0.0.3",
     "hexo-theme-volantis": "^5.0.0-rc.2",
-    "patch-package": "^6.4.7"
+    "patch-package": "^6.4.7",
+    "wordcount": "^1.1.1"
   }
 }
