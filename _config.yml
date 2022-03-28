@@ -103,7 +103,7 @@ theme: volantis
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: git@github.com:liufashi-code/liufashi-blog.git #https://bitbucket.org/JohnSmith/johnsmith.bitbucket.io
+  repo: git@121.40.223.192:/home/git/hexo.git #https://bitbucket.org/JohnSmith/johnsmith.bitbucket.io
   branch: 
   message:
 import:
