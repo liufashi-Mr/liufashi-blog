@@ -582,12 +582,12 @@ plugins:
   #   toggle: darkmode
   darkmode:
     enable: true
-  analytics:
-    leancloud: # 请使用自己的 id & key 以防止数据丢失
-      app_id: M5lFrKUlT36PQVjRb0i3Mtb8-gzGzoHsz # 应用 APP_ID
-      app_key: 295Kc2V12StMHkKQ8PyrLsJK # 应用 APP_KEY
-      custom_api_server: # 国际版一般不需要写，除非自定义了 API Server
 search:
   enable: true
   service: hexo # hexo
   js:
+analytics:
+  # busuanzi: /libs/busuanzi/js/busuanzi.pure.mini.js https://cdn.jsdelivr.net/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js
+  leancloud: # 请使用自己的 id & key 以防止数据丢失
+    app_id: M5lFrKUlT36PQVjRb0i3Mtb8-gzGzoHsz # 应用 APP_ID
+    app_key: 295Kc2V12StMHkKQ8PyrLsJK # 应用 APP_KEY
