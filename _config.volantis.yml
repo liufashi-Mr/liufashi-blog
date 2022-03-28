@@ -497,7 +497,7 @@ sidebar:
           unit: "日"
 comments:
   title: <i class='fas fa-comments'></i> 评论
-  subtitle: 如内容有误，望赐教！
+  subtitle: 文中有错误还望指出哦！
   service: valine
   valine:
     # js: https://npm.elemecdn.com/valine@1.4/dist/Valine.min.js
