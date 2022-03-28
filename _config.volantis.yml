@@ -67,19 +67,19 @@ custom_css:
   fontfamily:
     logofont:
       fontfamily: '"Varela Round", "PingFang SC", "Microsoft YaHei", Helvetica, Arial'
-      name: 'Varela Round'
+      name: "Varela Round"
       url: https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf
       weight: normal
       style: normal
     bodyfont:
       fontfamily: 'UbuntuMono, "PingFang SC", "Microsoft YaHei", Helvetica, Arial'
-      name: 'UbuntuMono'
+      name: "UbuntuMono"
       url: https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf
       weight: normal
       style: normal
     codefont:
-      fontfamily: 'Menlo, Monaco'
-      name: 'Monaco'
+      fontfamily: "Menlo, Monaco"
+      name: "Monaco"
       url: https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/Monaco/Monaco.ttf
       weight: normal
       style: normal
@@ -93,6 +93,9 @@ custom_css:
     zoom-in: https://cdn.jsdelivr.net/gh/inkss/common@master/cursor/zoom-in.png
     grab: https://cdn.jsdelivr.net/gh/inkss/common@master/cursor/openhand.png
   body:
+    top_meta: [wordcount]
+    # 从 meta_library 中取
+    bottom_meta: [wordcount]
     effect: [shadow] # [shadow, floatable, blur]
     highlight:
       language: true # show language of codeblock
@@ -258,7 +261,7 @@ site_footer:
   # site copyright
   copyright: blog - Record Life
   # You can add your own property here. (Support markdown, for example: br: '<br>')
-  br: '<br>'
+  br: "<br>"
 cover:
   height_scheme: full # full, half
   layout_scheme: dock
@@ -507,6 +510,8 @@ comments:
     appId: M5lFrKUlT36PQVjRb0i3Mtb8-gzGzoHsz # your appId
     appKey: 295Kc2V12StMHkKQ8PyrLsJK # your appKey
 plugins:
+  wordcount:
+    enable: true
   message:
     enable: true
     icon: # 默认图标，支持对图标添加颜色，可选值：see：/source/css/_style/_plugins/fontcolor.styl
@@ -577,7 +582,12 @@ plugins:
   #   toggle: darkmode
   darkmode:
     enable: true
+  analytics:
+    leancloud: # 请使用自己的 id & key 以防止数据丢失
+      app_id: M5lFrKUlT36PQVjRb0i3Mtb8-gzGzoHsz # 应用 APP_ID
+      app_key: 295Kc2V12StMHkKQ8PyrLsJK # 应用 APP_KEY
+      custom_api_server: # 国际版一般不需要写，除非自定义了 API Server
 search:
   enable: true
   service: hexo # hexo
-  js: 
+  js:
