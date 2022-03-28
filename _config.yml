@@ -104,7 +104,7 @@ theme: volantis
 deploy:
   type: git
   repo: git@121.40.223.192:/home/git/hexo.git #https://bitbucket.org/JohnSmith/johnsmith.bitbucket.io
-  branch: 
+  branch: master
   message:
 import:
   meta:
