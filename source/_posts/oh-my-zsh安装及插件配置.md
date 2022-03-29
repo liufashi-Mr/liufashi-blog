@@ -1,5 +1,5 @@
 ---
-title: Hello World
+title: oh-my-zsh安装与常用插件配置
 categories:
   - 开发工具
 tags:
