@@ -1,45 +1,30 @@
 ---
-title: Hello World
+title: 常用命令
 categories:
-    - 分类A
-tags: 
-    - hello
-    - a
-    - b
-    - c
+  - 开发工具
+tags:
+  - linux
+  - 常用命令
 ---
-Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
 
-## Quick Start1
+## 作用
 
-### Create a new post
+每次长时间不用就要百度,记录下
 
-``` bash
-$ hexo new "My New Post"
+### hexo
+
+```bash
+ hexo new "My New Post" #创建新发布
+ hexo server #本地服务
+ hexo generate #生成静态文件
+ hexo clean && hexo deploy #清空再发布
+
 ```
 
-More info: [Writing](https://hexo.io/docs/writing.html)
+### nginx
 
-### Run server
-
-``` bash
-$ hexo server
+```bash
+nginx #启动
+nginx -s stop #停止
+nginx -s reload #重载
 ```
-
-More info: [Server](https://hexo.io/docs/server.html)
-
-### Generate static files
-
-``` bash
-$ hexo generate
-```
-
-More info: [Generating](https://hexo.io/docs/generating.html)
-
-### Deploy to remote sites
-
-``` bash
-$ hexo deploy
-```
-
-More info: [Deployment](https://hexo.io/docs/one-command-deployment.html)
