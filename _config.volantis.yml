@@ -421,7 +421,7 @@ sidebar:
       shape: circle # circle, rectangle
       url: /about/
       title: LIUFASHI
-      jinrishici: liufashi-blogs # Poetry Today. You can set a string, and it will be displayed when loading fails.
+      jinrishici: true # Poetry Today. You can set a string, and it will be displayed when loading fails.
       social:
         - icon: fas fa-home
           url: /
