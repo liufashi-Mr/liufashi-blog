@@ -1,5 +1,5 @@
 diff --git a/node_modules/hexo-theme-volantis/_config.yml b/node_modules/hexo-theme-volantis/_config.yml
-index 2672946..da7c9e2 100755
+index 2672946..03f79b7 100644
 --- a/node_modules/hexo-theme-volantis/_config.yml
 +++ b/node_modules/hexo-theme-volantis/_config.yml
 @@ -18,7 +18,7 @@ default:
@@ -264,6 +264,15 @@ index 2672946..da7c9e2 100755
    fontawesome_animation:
      enable: #true
      css: /libs/font-awesome-animation/font-awesome-animation.min.css # https://cdn.jsdelivr.net/gh/l-lin/font-awesome-animation/dist/font-awesome-animation.min.css
+@@ -756,7 +758,7 @@ plugins:
+     # Optional
+     fixed: false      # enable fixed mode
+     theme: '#1BCDFC'  # main color
+-    autoplay: false   # audio autoplay
++    autoplay: true   # audio autoplay
+     order: list       # player play order, values: 'list', 'random'
+     loop: all         # player loop play, values: 'all', 'one', 'none'
+     volume: 0.7       # default volume, notice that player will remember user setting, default volume will not work after user set volume themselves
 @@ -780,7 +782,7 @@ plugins:
    # 暗黑模式 darkmode
    # 开关按钮：在 navbar.menu 中添加：
@@ -327,7 +336,7 @@ index 0615b64..65cf97c 100644
          <%- theme.article.body.meta_library.counter.unit %>
        </p>
 diff --git a/node_modules/hexo-theme-volantis/layout/_partial/_cover/dock.ejs b/node_modules/hexo-theme-volantis/layout/_partial/_cover/dock.ejs
-index 629fa44..dcef71c 100644
+index 629fa44..ad41712 100644
 --- a/node_modules/hexo-theme-volantis/layout/_partial/_cover/dock.ejs
 +++ b/node_modules/hexo-theme-volantis/layout/_partial/_cover/dock.ejs
 @@ -9,6 +9,49 @@
@@ -356,7 +365,7 @@ index 629fa44..dcef71c 100644
 +        c.step ? c.step-- : (c.step = g, c.prefixP < l.length ? (c.prefixP >= 0 && (c.text += l[c.prefixP]), c.prefixP++) : "forward" === c.direction ? c.skillP < t.length ? (c.text += t[c.skillP], c.skillP++) : c.delay ? c.delay-- : (c.direction = "backward", c.delay = a) : c.skillP > 0 ? (c.text = c.text.slice(0, -1), c.skillP--) : (c.skillI = (c.skillI + 1) % o.length, c.direction = "forward")), r.textContent = c.text, r.appendChild(n(c.prefixP < l.length ? Math.min(s, s + c.prefixP) : Math.min(s, t.length - c.skillP))), setTimeout(i, d)
 +      }
 +      var l = "",
-+      o = ["山有木兮木有枝，心悦君兮君不知。", "人生若只如初见，何事秋风悲画扇。","十年生死两茫茫，不思量，自难忘。", "曾经沧海难为水，除却巫山不是云。","洛中何郁郁，冠带自相索。","只愿君心似我心，定不负相思意。","愿得一心人，白头不相离。","入我相思门，知我相思苦。"].map(function (r) {
++      o = ["山有木兮木有枝，心悦君兮君不知。","luoxinyu 是 🐖", "人生若只如初见，何事秋风悲画扇。","十年生死两茫茫，不思量，自难忘。", "曾经沧海难为水，除却巫山不是云。","洛中何郁郁，冠带自相索。","只愿君心似我心，定不负相思意。","愿得一心人，白头不相离。","入我相思门，知我相思苦。"].map(function (r) {
 +      return r + ""
 +      }),
 +      a = 2,
@@ -406,7 +415,7 @@ index 76877f5..9af227a 100644
        </div>
      <% } %>
 diff --git a/node_modules/hexo-theme-volantis/layout/_partial/archive.ejs b/node_modules/hexo-theme-volantis/layout/_partial/archive.ejs
-index 2c94175..0f3d472 100755
+index 2c94175..0f3d472 100644
 --- a/node_modules/hexo-theme-volantis/layout/_partial/archive.ejs
 +++ b/node_modules/hexo-theme-volantis/layout/_partial/archive.ejs
 @@ -47,7 +47,7 @@
@@ -428,7 +437,7 @@ index 2c94175..0f3d472 100755
            </a>
          <% } %>
 diff --git a/node_modules/hexo-theme-volantis/layout/_partial/article.ejs b/node_modules/hexo-theme-volantis/layout/_partial/article.ejs
-index dba3a43..ce477fd 100755
+index dba3a43..ce477fd 100644
 --- a/node_modules/hexo-theme-volantis/layout/_partial/article.ejs
 +++ b/node_modules/hexo-theme-volantis/layout/_partial/article.ejs
 @@ -96,13 +96,13 @@
@@ -476,7 +485,7 @@ index f9f33f4..3d138a9 100644
      </div>
  <% } %>
 diff --git a/node_modules/hexo-theme-volantis/layout/_partial/footer.ejs b/node_modules/hexo-theme-volantis/layout/_partial/footer.ejs
-index 66aa112..c9baf73 100755
+index 66aa112..c9baf73 100644
 --- a/node_modules/hexo-theme-volantis/layout/_partial/footer.ejs
 +++ b/node_modules/hexo-theme-volantis/layout/_partial/footer.ejs
 @@ -41,7 +41,7 @@
@@ -489,7 +498,7 @@ index 66aa112..c9baf73 100755
          <% } %>
        <% } else if (item == 'source') { %>
 diff --git a/node_modules/hexo-theme-volantis/layout/_partial/head.ejs b/node_modules/hexo-theme-volantis/layout/_partial/head.ejs
-index 282fdad..568e390 100755
+index 282fdad..568e390 100644
 --- a/node_modules/hexo-theme-volantis/layout/_partial/head.ejs
 +++ b/node_modules/hexo-theme-volantis/layout/_partial/head.ejs
 @@ -26,7 +26,13 @@
@@ -508,7 +517,7 @@ index 282fdad..568e390 100755
    <!-- import meta -->
    <%_ if (config.import && config.import.meta){ _%>
 diff --git a/node_modules/hexo-theme-volantis/layout/_partial/header.ejs b/node_modules/hexo-theme-volantis/layout/_partial/header.ejs
-index 32d3a64..d714dc2 100755
+index 32d3a64..d714dc2 100644
 --- a/node_modules/hexo-theme-volantis/layout/_partial/header.ejs
 +++ b/node_modules/hexo-theme-volantis/layout/_partial/header.ejs
 @@ -4,9 +4,9 @@
@@ -728,7 +737,7 @@ index b1adc10..07da448 100644
  
    // 打开并搜索 字符串 s
 diff --git a/node_modules/hexo-theme-volantis/layout/_widget/webinfo.ejs b/node_modules/hexo-theme-volantis/layout/_widget/webinfo.ejs
-index 35f587d..84a639b 100644
+index ed078c6..62ea7f5 100644
 --- a/node_modules/hexo-theme-volantis/layout/_widget/webinfo.ejs
 +++ b/node_modules/hexo-theme-volantis/layout/_widget/webinfo.ejs
 @@ -29,9 +29,9 @@
@@ -756,7 +765,7 @@ index 35f587d..84a639b 100644
          </div>
        <% } %>
 diff --git a/node_modules/hexo-theme-volantis/layout/archive.ejs b/node_modules/hexo-theme-volantis/layout/archive.ejs
-index 75dc353..1390cef 100755
+index 75dc353..1390cef 100644
 --- a/node_modules/hexo-theme-volantis/layout/archive.ejs
 +++ b/node_modules/hexo-theme-volantis/layout/archive.ejs
 @@ -21,7 +21,7 @@
@@ -769,7 +778,7 @@ index 75dc353..1390cef 100755
  									<% if (post.icon) { %>
  										&nbsp;<i class="<%- post.icon %>" aria-hidden="true"></i>
 diff --git a/node_modules/hexo-theme-volantis/layout/category.ejs b/node_modules/hexo-theme-volantis/layout/category.ejs
-index aec2a46..988a2c6 100755
+index aec2a46..988a2c6 100644
 --- a/node_modules/hexo-theme-volantis/layout/category.ejs
 +++ b/node_modules/hexo-theme-volantis/layout/category.ejs
 @@ -15,7 +15,7 @@ if (!page.robots) {
@@ -782,7 +791,7 @@ index aec2a46..988a2c6 100755
                      (<%- category.posts.length %>)
                    </span>
 diff --git a/node_modules/hexo-theme-volantis/layout/friends.ejs b/node_modules/hexo-theme-volantis/layout/friends.ejs
-index 6e15e88..20f4f8a 100755
+index 6e15e88..20f4f8a 100644
 --- a/node_modules/hexo-theme-volantis/layout/friends.ejs
 +++ b/node_modules/hexo-theme-volantis/layout/friends.ejs
 @@ -29,7 +29,7 @@
@@ -795,7 +804,7 @@ index 6e15e88..20f4f8a 100755
                          </div>
                        <% } %>
 diff --git a/node_modules/hexo-theme-volantis/layout/layout.ejs b/node_modules/hexo-theme-volantis/layout/layout.ejs
-index 1ca9125..94dbac1 100755
+index 1ca9125..94dbac1 100644
 --- a/node_modules/hexo-theme-volantis/layout/layout.ejs
 +++ b/node_modules/hexo-theme-volantis/layout/layout.ejs
 @@ -12,7 +12,7 @@
@@ -815,7 +824,7 @@ index 1ca9125..94dbac1 100755
  </html>
 diff --git a/node_modules/hexo-theme-volantis/scripts/generator/build-config.js b/node_modules/hexo-theme-volantis/scripts/generator/build-config.js
 new file mode 100644
-index 0000000..1d6f1e7
+index 0000000..9f0571f
 --- /dev/null
 +++ b/node_modules/hexo-theme-volantis/scripts/generator/build-config.js
 @@ -0,0 +1,9 @@
@@ -884,7 +893,7 @@ index 8b37e9a..2a55e3c 100644
  .iziToast>.iziToast-body .iziToast-icon
    &.red
 diff --git a/node_modules/hexo-theme-volantis/source/js/app.js b/node_modules/hexo-theme-volantis/source/js/app.js
-index 5985f00..605c174 100755
+index 5985f00..605c174 100644
 --- a/node_modules/hexo-theme-volantis/source/js/app.js
 +++ b/node_modules/hexo-theme-volantis/source/js/app.js
 @@ -43,7 +43,7 @@ Object.freeze(locationHash);
@@ -1081,7 +1090,7 @@ index 6a47a80..8647b59 100644
      }
    }
 diff --git a/node_modules/hexo-theme-volantis/source/js/plugins/rightMenu.js b/node_modules/hexo-theme-volantis/source/js/plugins/rightMenu.js
-index 487d170..f09024c 100644
+index a925e62..30fba40 100644
 --- a/node_modules/hexo-theme-volantis/source/js/plugins/rightMenu.js
 +++ b/node_modules/hexo-theme-volantis/source/js/plugins/rightMenu.js
 @@ -1,7 +1,7 @@
@@ -1109,7 +1118,7 @@ index 487d170..f09024c 100644
  
 -    if (volantis.THEMECONFIG.plugins.aplayer.enable 
 +    if (volantis.GLOBAL_CONFIG.plugins.aplayer.enable
-       && typeof RightMenuAplayer !== 'undefined'
+       && typeof RightMenuAplayer !== 'undefined' 
        && RightMenuAplayer.APlayer.player !== undefined) {
 -      if (rightMenuConfig.music.alwaysShow) {
 +      if (rightMenuConfig.music_alwaysShow) {
@@ -4992,16 +5001,10 @@ index 2c8659c..0000000
 -c8.57324 -16.2061 23.0801 -27.873 43.5195 -35c20.4404 -7.12695 48.9209 -10.6172 85.4414 -10.4697h4.59961c36.5605 -0.15332 65.0439 3.33691 85.4502 10.4707c20.4336 7.12012 34.9365 18.7871 43.5098 35.001s13.2402 37.8809 14 65.001z" />
 -  </font>
 -</defs></svg>
-diff --git a/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-free/webfonts/fa-brands-400.ttf b/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-free/webfonts/fa-brands-400.ttf
-index 16852bf..227f022 100644
-Binary files a/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-free/webfonts/fa-brands-400.ttf and b/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-free/webfonts/fa-brands-400.ttf differ
 diff --git a/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-free/webfonts/fa-brands-400.woff b/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-free/webfonts/fa-brands-400.woff
 deleted file mode 100644
 index 6cf6fb3..0000000
 Binary files a/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-free/webfonts/fa-brands-400.woff and /dev/null differ
-diff --git a/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-free/webfonts/fa-brands-400.woff2 b/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-free/webfonts/fa-brands-400.woff2
-index f2a4e36..73c5c12 100644
-Binary files a/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-free/webfonts/fa-brands-400.woff2 and b/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-free/webfonts/fa-brands-400.woff2 differ
 diff --git a/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-free/webfonts/fa-regular-400.eot b/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-free/webfonts/fa-regular-400.eot
 deleted file mode 100644
 index 479b32c..0000000
@@ -5817,16 +5820,10 @@ index 7947ca8..0000000
 -s-69.5996 -5.5 -92.2998 -15.2002c-8.60059 -3.7002 -17 6.10059 -15.5 17.9004c6.89941 55 62.3994 93.2998 107.8 93.2998z" />
 -  </font>
 -</defs></svg>
-diff --git a/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-free/webfonts/fa-regular-400.ttf b/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-free/webfonts/fa-regular-400.ttf
-index 42a04fd..c8ed46d 100644
-Binary files a/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-free/webfonts/fa-regular-400.ttf and b/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-free/webfonts/fa-regular-400.ttf differ
 diff --git a/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff b/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff
 deleted file mode 100644
 index c390c60..0000000
 Binary files a/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff and /dev/null differ
-diff --git a/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff2 b/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff2
-index 11c71d2..c9291c7 100644
-Binary files a/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff2 and b/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff2 differ
 diff --git a/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-free/webfonts/fa-solid-900.eot b/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-free/webfonts/fa-solid-900.eot
 deleted file mode 100644
 index 52883b9..0000000
@@ -10852,24 +10849,16 @@ index d5e4d52..0000000
 -c0 17.6611 -14.3389 32 -32 32h-128c-17.6611 0 -32 -14.3389 -32 -32v-64c0 -17.6611 14.3389 -32 32 -32h128c17.6611 0 32 14.3389 32 32zM448 128v192c0 17.6611 -14.3389 32 -32 32h-64c-17.6611 0 -32 -14.3389 -32 -32v-192h128z" />
 -  </font>
 -</defs></svg>
-diff --git a/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-free/webfonts/fa-solid-900.ttf b/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-free/webfonts/fa-solid-900.ttf
-index 7c59512..99b35ad 100644
-Binary files a/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-free/webfonts/fa-solid-900.ttf and b/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-free/webfonts/fa-solid-900.ttf differ
 diff --git a/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff b/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff
 deleted file mode 100644
 index aff125d..0000000
 Binary files a/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff and /dev/null differ
-diff --git a/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2 b/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2
-index aa2b791..c7bd59c 100644
-Binary files a/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2 and b/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2 differ
 diff --git a/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-free/webfonts/fa-v4compatibility.ttf b/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-free/webfonts/fa-v4compatibility.ttf
 new file mode 100644
-index 0000000..be0afc2
-Binary files /dev/null and b/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-free/webfonts/fa-v4compatibility.ttf differ
+index 0000000..e69de29
 diff --git a/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-free/webfonts/fa-v4compatibility.woff2 b/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-free/webfonts/fa-v4compatibility.woff2
 new file mode 100644
-index 0000000..37a9b8c
-Binary files /dev/null and b/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-free/webfonts/fa-v4compatibility.woff2 differ
+index 0000000..e69de29
 diff --git a/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-pro/LICENSE.txt b/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-pro/LICENSE.txt
 new file mode 100644
 index 0000000..ca51a9e
@@ -10909,57 +10898,43 @@ index 0000000..312fd60
 \ No newline at end of file
 diff --git a/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-pro/webfonts/fa-brands-400.ttf b/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-pro/webfonts/fa-brands-400.ttf
 new file mode 100644
-index 0000000..afee608
-Binary files /dev/null and b/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-pro/webfonts/fa-brands-400.ttf differ
+index 0000000..e69de29
 diff --git a/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-pro/webfonts/fa-brands-400.woff2 b/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-pro/webfonts/fa-brands-400.woff2
 new file mode 100644
-index 0000000..7727d32
-Binary files /dev/null and b/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-pro/webfonts/fa-brands-400.woff2 differ
+index 0000000..e69de29
 diff --git a/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-pro/webfonts/fa-duotone-900.ttf b/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-pro/webfonts/fa-duotone-900.ttf
 new file mode 100644
-index 0000000..7002e28
-Binary files /dev/null and b/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-pro/webfonts/fa-duotone-900.ttf differ
+index 0000000..e69de29
 diff --git a/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-pro/webfonts/fa-duotone-900.woff2 b/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-pro/webfonts/fa-duotone-900.woff2
 new file mode 100644
-index 0000000..c7c99c3
-Binary files /dev/null and b/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-pro/webfonts/fa-duotone-900.woff2 differ
+index 0000000..e69de29
 diff --git a/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-pro/webfonts/fa-light-300.ttf b/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-pro/webfonts/fa-light-300.ttf
 new file mode 100644
-index 0000000..5efdcc2
-Binary files /dev/null and b/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-pro/webfonts/fa-light-300.ttf differ
+index 0000000..e69de29
 diff --git a/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-pro/webfonts/fa-light-300.woff2 b/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-pro/webfonts/fa-light-300.woff2
 new file mode 100644
-index 0000000..ed51e78
-Binary files /dev/null and b/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-pro/webfonts/fa-light-300.woff2 differ
+index 0000000..e69de29
 diff --git a/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-pro/webfonts/fa-regular-400.ttf b/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-pro/webfonts/fa-regular-400.ttf
 new file mode 100644
-index 0000000..143d31c
-Binary files /dev/null and b/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-pro/webfonts/fa-regular-400.ttf differ
+index 0000000..e69de29
 diff --git a/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-pro/webfonts/fa-regular-400.woff2 b/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-pro/webfonts/fa-regular-400.woff2
 new file mode 100644
-index 0000000..29cd951
-Binary files /dev/null and b/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-pro/webfonts/fa-regular-400.woff2 differ
+index 0000000..e69de29
 diff --git a/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-pro/webfonts/fa-solid-900.ttf b/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-pro/webfonts/fa-solid-900.ttf
 new file mode 100644
-index 0000000..fbdd1b2
-Binary files /dev/null and b/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-pro/webfonts/fa-solid-900.ttf differ
+index 0000000..e69de29
 diff --git a/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-pro/webfonts/fa-solid-900.woff2 b/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-pro/webfonts/fa-solid-900.woff2
 new file mode 100644
-index 0000000..9cdddc7
-Binary files /dev/null and b/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-pro/webfonts/fa-solid-900.woff2 differ
+index 0000000..e69de29
 diff --git a/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-pro/webfonts/fa-thin-100.ttf b/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-pro/webfonts/fa-thin-100.ttf
 new file mode 100644
-index 0000000..35df2d6
-Binary files /dev/null and b/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-pro/webfonts/fa-thin-100.ttf differ
+index 0000000..e69de29
 diff --git a/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-pro/webfonts/fa-thin-100.woff2 b/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-pro/webfonts/fa-thin-100.woff2
 new file mode 100644
-index 0000000..c7c6d8d
-Binary files /dev/null and b/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-pro/webfonts/fa-thin-100.woff2 differ
+index 0000000..e69de29
 diff --git a/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-pro/webfonts/fa-v4compatibility.ttf b/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-pro/webfonts/fa-v4compatibility.ttf
 new file mode 100644
-index 0000000..6dd1a66
-Binary files /dev/null and b/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-pro/webfonts/fa-v4compatibility.ttf differ
+index 0000000..e69de29
 diff --git a/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-pro/webfonts/fa-v4compatibility.woff2 b/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-pro/webfonts/fa-v4compatibility.woff2
 new file mode 100644
-index 0000000..4f4121b
-Binary files /dev/null and b/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-pro/webfonts/fa-v4compatibility.woff2 differ
+index 0000000..e69de29
