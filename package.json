@@ -7,7 +7,8 @@
     "clean": "hexo clean",
     "deploy": "hexo deploy",
     "server": "hexo server",
-    "postinstall": "patch-package"
+    "postinstall": "patch-package",
+    "dist":"hexo generate && hexo deploy"
   },
   "hexo": {
     "version": "5.4.1"
