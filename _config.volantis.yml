@@ -1,7 +1,6 @@
 # 注意事项：建议规范全站路径 URL 最后带一个 "/" 例如 "about/"
 navbar:
   visiable: always # always, auto
-  backgroundx: linear-gradient(to top, "#fff1eb" 0%, "#ace0f9" 100%)
   logo: # choose [img] or [icon + title]
     img: /img/avatar-circle.png
     icon:
@@ -58,7 +57,7 @@ custom_css:
     effect: [shadow, blur] # [shadow, floatable, blur]
   navbar:
     height: 64px
-    effect: [shadow, blur] # [shadow, floatable, blur]
+    effect: [shadow] # [shadow, floatable, blur]
   scrollbar:
     size: 4px
     border: 2px
