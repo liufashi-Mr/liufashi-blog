@@ -52,6 +52,7 @@ navbar:
           url: friends/
   search: 搜索 # Search bar placeholder
 custom_css:
+  max_width: 1120px
   sidebar:
     position: left # left right
     effect: [shadow, blur] # [shadow, floatable, blur]
