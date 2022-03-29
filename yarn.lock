@@ -700,10 +700,10 @@ get-intrinsic@^1.0.2:
     has "^1.0.3"
     has-symbols "^1.0.1"
 
-giscus@0.0.9:
-  version "0.0.9"
-  resolved "https://registry.npmmirror.com/giscus/-/giscus-0.0.9.tgz#563bb2cd7371f374275a5c0f0cb8cc7e9ece49fd"
-  integrity sha512-RLIC1dJ35GemRBvm1eGhu6pNuMJdQCa37MHauiTDx4f1Dl2VRSyFv1WMf4u6xIrh0qIPAJ7N3YB8WUIkRU9X3A==
+giscus@0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/giscus/-/giscus-0.1.1.tgz#ddcda8de6be8812e606c7dc2d7372d7f5c488a19"
+  integrity sha512-OYCBy8uSdpZ0bhKRB6/5nzYCh0dOMq4HGJ/NmBp2k4c/1IuU/TIGVUHYGcqKVgA2J+CEF3bG5Urc1sxdmKtHVA==
   dependencies:
     lit "^2.1.3"
 
