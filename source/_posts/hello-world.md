@@ -18,7 +18,6 @@ tags:
  hexo server #本地服务
  hexo generate #生成静态文件
  hexo clean && hexo deploy #清空再发布
-
 ```
 
 ### nginx
