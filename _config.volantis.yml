@@ -28,7 +28,7 @@ navbar:
         - name: csdn
           icon: iconfont icon-csdn
           url: https://blog.csdn.net/weixin_44134674?type=blog
-        - name: 我的项目
+        - name: my project
           icon: iconfont icon-xiangmu
           url: http://expo.liufashi.top
     - name: 归档
@@ -52,7 +52,7 @@ navbar:
           url: friends/
   search: 搜索 # Search bar placeholder
 custom_css:
-  max_width: 1140px
+  max_width: 1160px
   sidebar:
     position: left # left right
     effect: [shadow, blur] # [shadow, floatable, blur]
@@ -428,7 +428,7 @@ sidebar:
         - icon: fab fa-github
           url: https://github.com/liufashi-code?tab=repositories
         - icon: iconfont icon-my
-          url: about/
+          url: /about/
     # ---------------------------------------
     # category widget
     category:
@@ -437,7 +437,7 @@ sidebar:
       header:
         icon: fas fa-folder-open
         title: 文章分类
-        url: categories/
+        url: /categories/
     # ---------------------------------------
     # tagcloud widget
     tagcloud:
@@ -446,7 +446,7 @@ sidebar:
       header:
         icon: fas fa-tags
         title: 所有标签
-        url: tags/
+        url: /tags/
       min_font: 14
       max_font: 24
       color: true
