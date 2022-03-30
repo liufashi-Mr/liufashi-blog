@@ -11,7 +11,7 @@ tags:
 
 > 工欲善其事,必先利其器
 
-zsh是一种 shell，兼容最常用的 bash 这种 shell 的命令和操作，bash 虽然很标准，但是自己日常使用方便更重要。oh-my-zsh 提供了丰富的插件和主题
+zsh 是一种 shell，兼容最常用的 bash 这种 shell 的命令和操作，bash 虽然很标准，但是自己日常使用方便更重要。oh-my-zsh 提供了丰富的插件和主题
 
 ## 安装
 
@@ -53,7 +53,7 @@ plugins=(
 
 - extract 用于解压任何压缩文件，不必根据压缩文件的后缀名来记忆压缩软件
 - z 可以直接跳转到曾经去过的文件夹,在项目多的时候非常实用,之前在 mac 上使用的 autojump,后面发现 zsh 内置的插件 z 也能达到同样的效果
-下面两个则需要在自行配置
+  下面两个则需要在自行配置
 
 ### zsh-autosuggestions
 
@@ -70,3 +70,5 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/plugins/
 ```bash
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/plugins/zsh-syntax-highlighting
 ```
+
+最后再运行`source ~/.zshrc`
