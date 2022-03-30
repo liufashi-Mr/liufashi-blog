@@ -52,7 +52,7 @@ navbar:
           url: friends/
   search: 搜索 # Search bar placeholder
 custom_css:
-  max_width: 1120px
+  max_width: 1140px
   sidebar:
     position: left # left right
     effect: [shadow, blur] # [shadow, floatable, blur]
@@ -437,7 +437,7 @@ sidebar:
       header:
         icon: fas fa-folder-open
         title: 文章分类
-        url: /blog/categories/
+        url: categories/
     # ---------------------------------------
     # tagcloud widget
     tagcloud:
@@ -445,8 +445,8 @@ sidebar:
       display: [desktop, mobile] # [desktop, mobile]
       header:
         icon: fas fa-tags
-        title: 热门标签
-        url: /blog/tags/
+        title: 所有标签
+        url: tags/
       min_font: 14
       max_font: 24
       color: true
