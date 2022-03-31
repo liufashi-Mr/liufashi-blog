@@ -29,7 +29,7 @@ navbar:
           icon: iconfont icon-csdn
           url: https://blog.csdn.net/weixin_44134674?type=blog
         - name: my project
-          icon: iconfont icon-xiangmu
+          icon: iconfont icon-my
           url: http://expo.liufashi.top
     - name: 归档
       icon: fas fa-archive
@@ -433,7 +433,7 @@ sidebar:
     # category widget
     category:
       class: category
-      display: [desktop] # [desktop, mobile]
+      display: [desktop,mobile] # [desktop, mobile]
       header:
         icon: fas fa-folder-open
         title: 文章分类
