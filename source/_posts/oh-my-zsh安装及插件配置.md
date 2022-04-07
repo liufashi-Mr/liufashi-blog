@@ -57,7 +57,7 @@ plugins=(
 
 ### zsh-autosuggestions
 
-将项目克隆到` ~/.oh-my-zsh/plugins/`中,然后再`~/.zshrc`中的 plugins 中加上 zsh-autosuggestions 即可
+将项目克隆到`~/.oh-my-zsh/plugins/`中,然后再`~/.zshrc`中的 plugins 中加上 zsh-autosuggestions 即可
 
 ```bash
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/plugins/zsh-autosuggestions
