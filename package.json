@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "busuanzi": "^2.3.0",
-    "giscus": "0.0.9",
+    "giscus": "1.0.1",
     "hexo": "^5.0.0",
     "hexo-asset-image": "^1.0.0",
     "hexo-deployer-git": "^3.0.0",
