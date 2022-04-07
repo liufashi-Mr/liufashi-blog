@@ -10,7 +10,9 @@ keywords: 编程 前端
 author: liufashi
 language: en
 timezone: ""
-
+permalink_pinyin:
+  enable: true
+  separator: '-' # default: '-'
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: http://blog.liufashi.top
@@ -98,7 +100,6 @@ ignore:
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: volantis
-
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
