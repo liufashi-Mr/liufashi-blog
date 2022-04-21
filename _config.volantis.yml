@@ -21,7 +21,7 @@ navbar:
       rows:
         - name: github
           icon: fab fa-github
-          url: https://github.com/liufashi-code?tab=repositories
+          url: https://github.com/liufashi-Mr?tab=repositories
         - name: gitee
           icon: iconfont icon-gitee
           url: https://gitee.com/liu-fashi
@@ -45,7 +45,7 @@ navbar:
         - name: 主题源码
           url: https://github.com/volantis-x/hexo-theme-volantis/
         - name: 本站源码
-          url: https://github.com/liufashi-code/liufashi-blog
+          url: https://github.com/liufashi-Mr/liufashi-blog
         - name: hr
         - name: 友链
           icon: fas fa-link
@@ -231,7 +231,7 @@ rightmenu:
   source_docs:
     name: 本站源码
     icon: fa fa-code-branch
-    url: https://github.com/liufashi-code/liufashi-blog
+    url: https://github.com/liufashi-Mr/liufashi-blog
   source_theme:
     name: 主题源码
     icon: fa fa-code-branch
@@ -426,7 +426,7 @@ sidebar:
         - icon: fas fa-envelope
           url: mailto:1325178274@qq.com
         - icon: fab fa-github
-          url: https://github.com/liufashi-code?tab=repositories
+          url: https://github.com/liufashi-Mr?tab=repositories
         - icon: iconfont icon-my
           url: /about/
     # ---------------------------------------
