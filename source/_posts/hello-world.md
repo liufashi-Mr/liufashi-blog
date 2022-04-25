@@ -1,5 +1,6 @@
 ---
 title: 常用命令
+date: 2022-03-06 13:46:07
 categories:
   - 开发工具
 tags:

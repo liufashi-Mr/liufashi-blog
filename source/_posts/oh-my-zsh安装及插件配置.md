@@ -1,5 +1,6 @@
 ---
 title: oh-my-zsh安装与常用插件配置
+date: 2022-03-29 13:46:07
 categories:
   - 开发工具
 tags:
