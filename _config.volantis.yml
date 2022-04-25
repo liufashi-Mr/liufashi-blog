@@ -494,7 +494,7 @@ sidebar:
         lastupd:
           enable: true
           friendlyShow: true # 更友好的时间显示
-          text: "最后活动时间："
+          text: "最后更新："
           unit: "日"
 comments:
   title: <i class='fas fa-comments'></i> 评论
