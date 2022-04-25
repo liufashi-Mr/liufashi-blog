@@ -139,7 +139,7 @@ color_scheme:
     # 网站背景上的文字
     site_inner: "#fff"
     # 网站页脚文字
-    site_footer: "#666"
+    site_footer: "#fff"
 
     # 卡片背景色
     card: "#fff"
@@ -259,7 +259,7 @@ site_footer:
     <span id="lc-sv">本站总访问量为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 次</span>
     <span id="lc-uv">访客数为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 人</span>
   # site copyright
-  copyright: blog - Record Life
+  copyright: blog - Record Life 鄂ICP备2021022377号
   # You can add your own property here. (Support markdown, for example: br: '<br>')
   br: "<br>"
 cover:
