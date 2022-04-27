@@ -81,8 +81,8 @@ module.exports = {
 
 ### prettier 规范
 
-在根目录创建.prettierrc.js 文件（同理也可以创建.prettierrcignore）.prettierrc.js 中添加如下内容，具体的配置可以看 prettierrc 官网配置项。以下为我比较习惯的 react 项目的配置
-
+在根目录创建.prettierrc.js 文件（同理也可以创建.prettierignore）.prettierrc.js 中添加如下内容，具体的配置可以看 prettierrc 官网配置项。以下为我比较习惯的 react 项目的配置
+~~~~
 ```js
 module.exports = {
   //每行宽度
