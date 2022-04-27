@@ -1,23 +1,15 @@
 ---
-title: react+typescript构建h5项目
-date: 2022-04-27 10:47:54
+title: 配置react+typescript项目的lint，commit，prettier规范
+date: 2022-04-27 15:26:12
 categories:
   - FE
-  - react
-  - typescript
 tags:
+  - eslint
+  - prettier
+  - FE
   - react
   - typescript
-  - FE
 ---
-
-## 介绍
-
-&#8195;&#8195;项目为基于 create-react-app 后面称为 cra 实现的移动端的一个项目模板。从零开始的项目构建，包括路由配置（react-router-dom v6），lint 规则，commit 规则，移动端适配等等。大家可以基于这个项目进行修改，[github 地址](https://github.com/liufashi-Mr/h5-react-typescript)，[预览地址](http://h5.template.liufashi.top)，也可以按照我的思路自己去搭建一遍。
-
-## 起步
-
-&#8195;&#8195;使用 cra 创建项目`npx create-react-app [project name] --template typescript`，现在新版本 cra 只能使用 npx 来创建项目了。由于我们需要使用修改项目中 webpack 的配置文件，使用`npm run eject`将 webpack 配置暴露出来进行修改，也可以使用`npm i react-app-rewired -D`安装插件，在根目录创建 config-overrides.js 文件来覆盖配置。这里我推荐第一种方式，一是可以试着熟悉 cra 的 webpack 是怎样配置的，其次能避免一些奇奇怪怪的问题。
 
 ## 配置规范
 
@@ -179,102 +171,3 @@ module.exports = {
 ```
 
 这样你在 commit 之前就会先检验 commit 内容是狗符合规范，然后就是当前 node 版本，然后检测 lint 规则，最后就是自动格式化代码。
-
-## 项目配置
-
-### 项目别名
-
-在`/config/webpack.config.js`中搜索 alias 约 300 行左右,添加如下配置，可以根据自己的命名和编码习惯来配置修改。
-
-```js
-alias: {
-        // Support React Native Web
-        // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
-        "react-native": "react-native-web",
-        // Allows for better profiling with ReactDevTools
-        ...(isEnvProductionProfile && {
-          "react-dom$": "react-dom/profiling",
-          "scheduler/tracing": "scheduler/tracing-profiling",
-        }),
-        ...(modules.webpackAliases || {}),
-        +"@": path.resolve(__dirname, "../src"),
-        +"@apis": path.resolve(__dirname, "../src/api"),
-        +"@icons": path.resolve(__dirname, "../src/assets/icons"),
-        +"@images": path.resolve(__dirname, "../src/assets/images"),
-        +"@components": path.resolve(__dirname, "../src/components"),
-        +"@pages": path.resolve(__dirname, "../src/pages"),
-        +"@utils": path.resolve(__dirname, "../src/utils"),
-        +"@router/*": path.resolve(__dirname, "../src/router"),
-      },
-```
-
-此时就可以采用路径别名的方式在项目中引入模块/文件。此时我们使用 command/control+click 还不能跳转至对应的文件。为了方便代码的查阅，在 cra 生成的`tsconfig.json`中添加如下配置，路径要和 alias 配置的一至。不添加`baseUrl: "./"`配置的话，路径需要为相对路径
-
-```json
-{
-  "compilerOptions": {
-    ...
-    "baseUrl": "./",
-    "paths": {
-      "@/*": ["src/*"],
-      "@api/*": ["src/apis/*"],
-      "@icons/*": ["src/assets/icons/*"],
-      "@images/*": ["src/assets/images/*"],
-      "@components/*": ["src/components/*"],
-      "@pages/*": ["src/pages/*"],
-      "@utils/*": ["src/utils/*"],
-      "@router/*": ["src/router/*"]
-    }
-  },
-  ...
-}
-
-```
-
-### 配置全局的 types
-
-在 tsconfig 中添加配置项
-
-```json
-{
-  "compilerOptions": {
-    ...
-    "baseUrl": "./",
-  + "typeRoots": ["src/@types/"],//全局types的路径
-    "paths": {
-      "@/*": ["src/*"],
-      "@api/*": ["src/apis/*"],
-      "@icons/*": ["src/assets/icons/*"],
-      "@images/*": ["src/assets/images/*"],
-      "@components/*": ["src/components/*"],
-      "@pages/*": ["src/pages/*"],
-      "@utils/*": ["src/utils/*"],
-      "@router/*": ["src/router/*"]
-    }
-  },
-  ...
-}
-```
-
-### 配置项目结构
-
-按照我个人习惯的命名方式，项目结构如下：
-
-```bash
-    ├── apis
-        ├── config.ts
-        ├── index.ts
-        ├── request.ts
-    ├── assets #资源文件
-    ├── components #项目组件
-    ├── pages #页面
-        ├──<Name> #页面名称 驼峰命名
-            ├── index.tsx
-            ├── index[.module].(scss|sass)
-    ├── router #路由配置
-    ├── utils #工具函数&&自定义hooks
-```
-
-### 配置路由
-
-今天先到这里，明天再写！
