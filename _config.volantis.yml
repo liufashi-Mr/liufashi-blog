@@ -39,6 +39,9 @@ navbar:
     - name: 开/关灯
       icon: fa fa-moon
       toggle: darkmode
+    - name: 关于
+      icon: iconfont icon-my
+      url: about/
     - name: 更多
       icon: fas fa-ellipsis-v
       rows:
