@@ -11,7 +11,9 @@ valine:
 
 ### 个人介绍
 
-<img src='../img/avatar.jpg' width="100" height="100" style="margin:10px">  
+<img src='../img/avatar.jpg' width="100" height="100" style="margin:10px">
+
+> 人间烟火气，最抚凡人心
 
 邮箱：1325178274@qq.com
 我的项目：
