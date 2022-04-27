@@ -82,7 +82,7 @@ module.exports = {
 ### prettier 规范
 
 在根目录创建.prettierrc.js 文件（同理也可以创建.prettierignore）.prettierrc.js 中添加如下内容，具体的配置可以看 prettierrc 官网配置项。以下为我比较习惯的 react 项目的配置
-~~~~
+
 ```js
 module.exports = {
   //每行宽度
@@ -171,3 +171,4 @@ module.exports = {
 ```
 
 这样你在 commit 之前就会先检验 commit 内容是狗符合规范，然后就是当前 node 版本，然后检测 lint 规则，最后就是自动格式化代码。
+````
