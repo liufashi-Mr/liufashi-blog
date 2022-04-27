@@ -510,6 +510,8 @@ comments:
     # 其他配置项按照yml格式继续填写即可 除了 [el path placeholder emojiCDN emojiMaps] 选项
     appId: M5lFrKUlT36PQVjRb0i3Mtb8-gzGzoHsz # your appId
     appKey: 295Kc2V12StMHkKQ8PyrLsJK # your appKey
+    avatar: mp
+    enableQQ: true
 plugins:
   wordcount:
     enable: true
