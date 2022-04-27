@@ -8,5 +8,5 @@ categories:
 tags:
   - react
   - typescript
-  - 前端
+  - FE
 ---
