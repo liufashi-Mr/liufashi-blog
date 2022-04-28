@@ -1,6 +1,8 @@
 ---
 title: 配置react+typescript项目的lint，commit，prettier规范
 date: 2022-04-27 15:26:12
+author: fashi
+headimg: /img/projectRules/eslint.png
 categories:
   - FE
 tags:
@@ -171,4 +173,3 @@ module.exports = {
 ```
 
 这样你在 commit 之前就会先检验 commit 内容是狗符合规范，然后就是当前 node 版本，然后检测 lint 规则，最后就是自动格式化代码。
-````
