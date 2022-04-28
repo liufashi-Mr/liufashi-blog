@@ -822,24 +822,181 @@ index 6e15e88..20f4f8a 100755
                          </div>
                        <% } %>
 diff --git a/node_modules/hexo-theme-volantis/layout/layout.ejs b/node_modules/hexo-theme-volantis/layout/layout.ejs
-index 1ca9125..94dbac1 100755
+index 1ca9125..ee48918 100755
 --- a/node_modules/hexo-theme-volantis/layout/layout.ejs
 +++ b/node_modules/hexo-theme-volantis/layout/layout.ejs
-@@ -12,7 +12,7 @@
-           <%- partial('_plugins/pjax/pdata') %>
-         </div>
-         <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
+@@ -1,28 +1,150 @@
+ <!DOCTYPE html>
+ <html lang="<%- config.language %>">
+-  <%- partial('_partial/scripts/_ctrl') _%>
+-  <%- partial('_partial/head') _%>
+-  <body itemscope itemtype="http://schema.org/WebPage">
+-    <%- partial('_partial/header', null, {cache: false, path: path}) %>
+-    <div id="l_body">
+-      <%- partial('_partial/cover') %>
+-      <div id="safearea">
+-        <div class="body-wrapper">
+-          <%- body %>
+-          <%- partial('_plugins/pjax/pdata') %>
+-        </div>
+-        <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
 -        <a id="s-top" class="fas fa-arrow-up fa-fw" href="/" onclick="return false;" title="top"></a>
-+        <a id="s-top" class="fa-solid fa-arrow-up fa-fw" href="/" onclick="return false;" title="top"></a>
++<%- partial('_partial/scripts/_ctrl') _%>
++<%- partial('_partial/head') _%>
++
++<body itemscope itemtype="http://schema.org/WebPage">
++  <%- partial('_partial/header', null, {cache: false, path: path}) %>
++  <div id="l_body">
++    <%- partial('_partial/cover') %>
++    <div id="safearea">
++      <div class="body-wrapper">
++        <%- body %>
++        <%- partial('_plugins/pjax/pdata') %>
        </div>
++      <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
++      <a id="s-top" class="fa-solid fa-arrow-up fa-fw" href="/" onclick="return false;" title="top"></a>
      </div>
-     <div>
-@@ -25,4 +25,5 @@
+-    <div>
+-      <%- partial('_partial/scripts/index') %>
+-      <% if (theme.plugins.pjax.enable){ %>
+-        <%- partial('_plugins/pjax/index') %>
+-      <% } %>
+-    </div>
++  </div>
++  <div>
++    <%- partial('_partial/scripts/index') %>
++    <% if (theme.plugins.pjax.enable){ %>
++    <%- partial('_plugins/pjax/index') %>
++    <% } %>
++  </div>
+   <!-- Custom Files bodyEnd begin-->
    <%- volantis_inject('bodyEnd') %>
    <!-- Custom Files bodyEnd end-->
-   </body>
-+  <script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/mouse_slide.js"></script>
+-  </body>
++</body>
++<script>
++  //鼠标点击雪花特效
++  (function fairyDustCursor() {
++
++    var possibleColors = ["#D61C59", "#E7D84B", "#1B8798","#52c41a","#7221d1"]
++    var width = window.innerWidth;
++    var height = window.innerHeight;
++    var cursor = {
++      x: width / 2,
++      y: width / 2
++    };
++    var particles = [];
++
++    function init() {
++      bindEvents();
++      loop();
++    }
++
++    // Bind events that are needed
++    function bindEvents() {
++      document.addEventListener('mousemove', onMouseMove);
++      document.addEventListener('touchmove', onTouchMove);
++      document.addEventListener('touchstart', onTouchMove);
++
++      window.addEventListener('resize', onWindowResize);
++    }
++
++    function onWindowResize(e) {
++      width = window.innerWidth;
++      height = window.innerHeight;
++    }
++
++    function onTouchMove(e) {
++      if (e.touches.length > 0) {
++        for (var i = 0; i < e.touches.length; i++) {
++          addParticle(e.touches[i].clientX, e.touches[i].clientY,
++            possibleColors[Math.floor(Math.random() * possibleColors.length)]);
++        }
++      }
++    }
++
++    function onMouseMove(e) {
++      cursor.x = e.clientX;
++      cursor.y = e.clientY;
++      addParticle(cursor.x, cursor.y, possibleColors[Math.floor(Math.random() * possibleColors.length)]);
++    }
++
++    function addParticle(x, y, color) {
++      var particle = new Particle();
++      particle.init(x, y, color);
++      particles.push(particle);
++    }
++
++    function updateParticles() { // Updated 
++      for (var i = 0; i < particles.length; i++) {
++        particles[i].update();
++      } // Remove dead particles 
++      for (var i = particles.length - 1; i >= 0; i--) {
++        if (particles[i].lifeSpan < 0) {
++          particles[i].die();
++          particles.splice(i, 1);
++        }
++      }
++    }
++
++    function loop() {
++      requestAnimationFrame(loop);
++      updateParticles();
++    } /** * Particles */
++    function Particle() {
++      this.character = "*";
++      const randomNumber = parseInt(Math.random()*this.character.split('').length)
++      this.lifeSpan = 120; //ms 
++      this.initialStyles = {
++        "position": "fixed",
++        "top": "0", //必须加 "display" : "block"
++        "pointerEvents": "none",
++        "z-index": "10000000",
++        "fontSize": "20px",
++        "will-change": "transform"
++      }; // Init,and set properties 
++      this.init = function (x, y, color) {
++        this.velocity = {
++          x: (Math.random() < 0.5 ? -1 : 1) *
++            (Math.random() / 2),
++          y: 1
++        };
++        this.position = {
++          x: x - 10,
++          y: y - 20
++        };
++        this.initialStyles.color = color;
++        this.element = document.createElement('span');
++        this.element.innerHTML = this.character.split('')[randomNumber];
++        applyProperties(this.element, this.initialStyles);
++        this.update();
++        document.body.appendChild(this.element);
++      };
++      this.update = function () {
++        this.position.x += this.velocity.x;
++        this.position.y += this.velocity.y;
++        this.lifeSpan--;
++        this.element.style.transform = "translate3d(" + this.position.x + "px," + this.position.y + "px,0) scale(" +
++          (this.lifeSpan / 120) + ")";
++      }
++      this.die = function () {
++        this.element.parentNode.removeChild(this.element);
++      }
++    }
++    /** *
++       Utils */ // Applies css `properties` to an element. 
++    function applyProperties(target, properties) {
++      for (var key in
++          properties) {
++        target.style[key] = properties[key];
++      }
++    }
++    init();
++  })();
++</script>
++
  </html>
+\ No newline at end of file
 diff --git a/node_modules/hexo-theme-volantis/scripts/generator/build-config.js b/node_modules/hexo-theme-volantis/scripts/generator/build-config.js
 new file mode 100644
 index 0000000..9f0571f
@@ -1187,7 +1344,7 @@ index d0ffb20..e82b300 100644
      <main class="modal-body">
        <ul class="modal-results"></ul>
 diff --git a/node_modules/hexo-theme-volantis/source/js/thirdparty/valine.js b/node_modules/hexo-theme-volantis/source/js/thirdparty/valine.js
-index 841c790..07c77fb 100644
+index 841c790..710bb6a 100644
 --- a/node_modules/hexo-theme-volantis/source/js/thirdparty/valine.js
 +++ b/node_modules/hexo-theme-volantis/source/js/thirdparty/valine.js
 @@ -2044,6 +2044,16 @@
@@ -1217,14 +1374,6 @@ index 841c790..07c77fb 100644
                    ; var d = u + '<div class="vh"><div class="vhead">' + c + ' ' + a + '</div><div class="vmeta"><span class="vtime" >' + (0,
          g.default)(t.get('insertedAt'), e.i18n) + '</span><span class="vat" data-vm-id="' + (t.get('rid') || t.id) + '" data-self-id="' + t.id + '">' + e.i18n.t('reply') + '</span></div><div class="vcontent" data-expand="' + e.i18n.t('expand') + '">' + (0,
          S.default)(t.get('comment')) + '</div><div class="vreply-wrapper" data-self-id="' + t.id + '"></div><div class="vquote" data-self-id="' + t.id + '"></div></div>';
-@@ -2130,6 +2139,7 @@
-           }
-         }
-         var o = y.default.store.get(h.QQCacheKey);
-+        console.log( E.QQAvatar,' E.QQAvatar');
-         E.QQAvatar = e.config.enableQQ && !!o && o.pic || '';
-       })(),
-       e.reset = function() {
 diff --git a/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-free/LICENSE.txt b/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-free/LICENSE.txt
 index f31bef9..cc557ec 100644
 --- a/node_modules/hexo-theme-volantis/source/libs/@fortawesome/fontawesome-free/LICENSE.txt
