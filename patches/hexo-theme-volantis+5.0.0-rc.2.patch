@@ -822,7 +822,7 @@ index 6e15e88..20f4f8a 100755
                          </div>
                        <% } %>
 diff --git a/node_modules/hexo-theme-volantis/layout/layout.ejs b/node_modules/hexo-theme-volantis/layout/layout.ejs
-index 1ca9125..a393a55 100755
+index 1ca9125..a785d86 100755
 --- a/node_modules/hexo-theme-volantis/layout/layout.ejs
 +++ b/node_modules/hexo-theme-volantis/layout/layout.ejs
 @@ -1,28 +1,150 @@
@@ -944,7 +944,7 @@ index 1ca9125..a393a55 100755
 +      updateParticles();
 +    } /** * Particles */
 +    function Particle() {
-+      this.character = "￥";
++      this.character = "❄️";
 +      const randomNumber = parseInt(Math.random()*this.character.split('').length)
 +      this.lifeSpan = 120; //ms 
 +      this.initialStyles = {
