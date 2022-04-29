@@ -276,10 +276,5 @@ alias: {
 ```
 
 ### 配置路由
-<style>
-.a{
-  color:green;
-  
-}
-</style>
-<div class="a">今天先到这里，明天再写！<div>
+
+今天先到这里，明天再写！
