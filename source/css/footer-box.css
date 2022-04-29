@@ -3,13 +3,22 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 150px;
-  height: 150px;
   perspective: 1000px;
   position: fixed;
-  left: 125px;
-  bottom: 125px;
+  left: 75px;
+  bottom: 75px;
   z-index: 99999;
+  transition: all 1s;
+  cursor: pointer;
+}
+#body:hover {
+  left: 150px;
+  bottom: 150px;
+}
+@media only screen and (max-width: 1200px) {
+  #body {
+    display: none;
+  }
 }
 #section {
   /* 相对定位 */
@@ -39,31 +48,31 @@
 #section div:nth-child(1) {
   transform: translateZ(50px);
 }
-#section:hover div:nth-child(1) {
+#body:hover div:nth-child(1) {
   transform: translateZ(175px);
 }
 #section div:nth-child(2) {
   transform: rotateX(-180deg) translateZ(50px);
 }
-#section:hover div:nth-child(2) {
+#body:hover div:nth-child(2) {
   transform: rotateX(-180deg) translateZ(175px);
 }
 #section div:nth-child(3) {
   transform: rotateX(90deg) translateZ(50px);
 }
-#section:hover div:nth-child(3) {
+#body:hover div:nth-child(3) {
   transform: rotateX(90deg) translateZ(175px);
 }
 #section div:nth-child(4) {
   transform: rotateX(-90deg) translateZ(50px);
 }
-#section:hover div:nth-child(4) {
+#body:hover div:nth-child(4) {
   transform: rotateX(-90deg) translateZ(175px);
 }
 #section div:nth-child(5) {
   transform: rotateY(90deg) translateZ(50px);
 }
-#section:hover div:nth-child(5) {
+#body:hover div:nth-child(5) {
   transform: rotateY(90deg) translateZ(175px);
 }
 #section div:nth-child(6) {
@@ -91,6 +100,14 @@
   transform: rotateY(-90deg) translateZ(50px);
 }
 
+@keyframes spread-img {
+  0% {
+    transform: translateZ(50px);
+  }
+  100% {
+    transform: translateZ(170px);
+  }
+}
 @keyframes rotate-box {
   0% {
     transform: rotateY(0) rotateX(0);
