@@ -29,10 +29,12 @@
   height: 100%;
   background-color: #fff;
   transition: all 1s;
+  outline: 1px solid transparent;
 }
 #section div img {
   width: 100%;
   height: 100%;
+  outline: 1px solid transparent;
 }
 #section div:nth-child(1) {
   transform: translateZ(50px);
@@ -89,7 +91,7 @@
   transform: rotateY(-90deg) translateZ(50px);
 }
 
-@keyframes  rotate-box {
+@keyframes rotate-box {
   0% {
     transform: rotateY(0) rotateX(0);
   }
