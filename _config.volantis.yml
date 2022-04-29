@@ -53,6 +53,9 @@ navbar:
         - name: 友链
           icon: fas fa-link
           url: friends/
+        - name: D
+          icon: fas fa-link
+          url: one-piece/
   search: 搜索 # Search bar placeholder
 custom_css:
   max_width: 1160px
