@@ -501,7 +501,7 @@ sidebar:
           unit: "日"
 comments:
   title: <i class='fas fa-comments'></i> 评论
-  subtitle: 文中有错误还望指出哦！
+  subtitle: 请友好交流哦！
   service: valine
   valine:
     # js: https://npm.elemecdn.com/valine@1.4/dist/Valine.min.js
@@ -513,6 +513,8 @@ comments:
     avatar: mp
     enableQQ: true
 plugins:
+  gitter:
+    room: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
   wordcount:
     enable: true
   message:
@@ -594,8 +596,3 @@ analytics:
   leancloud: # 请使用自己的 id & key 以防止数据丢失
     app_id: M5lFrKUlT36PQVjRb0i3Mtb8-gzGzoHsz # 应用 APP_ID
     app_key: 295Kc2V12StMHkKQ8PyrLsJK # 应用 APP_KEY
-favicon:
-　small: /source/img/favicon-l.ico
-　medium: /source/img/favicon.ico
-　apple_touch_icon: /images/apple-touch-icon-next.png
-　safari_pinned_tab: /images/logo.svg

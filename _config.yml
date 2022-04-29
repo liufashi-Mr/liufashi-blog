@@ -119,3 +119,21 @@ import:
     - <link rel="mask-icon" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/safari-pinned-tab.svg" color="#5bbad5">
     - <link rel="shortcut icon" href="http://assets.liufashi.top/images/favicon/favicon.ico">
     - <link rel="stylesheet" href="/icons/iconfont.css">
+    - <link rel="stylesheet" href="/css/footer-box.css">
+    - <div id="body">
+        <div id="section">
+          <div><img src="/img/footer-box/1.jpg" alt="" /></div>
+          <div><img src="/img/footer-box/1.jpg" alt="" /></div>
+          <div><img src="/img/footer-box/2.jpg" alt="" /></div>
+          <div><img src="/img/footer-box/3.jpg" alt="" /></div>
+          <div><img src="/img/footer-box/4.jpg" alt="" /></div>
+          <div><img src="/img/footer-box/5.jpg" alt="" /></div>
+          <div><img src="/img/footer-box/6.jpg" alt="" /></div>
+          <div><img src="/img/footer-box/1.jpg" alt="" /></div>
+          <div><img src="/img/footer-box/2.jpg" alt="" /></div>
+          <div><img src="/img/footer-box/3.jpg" alt="" /></div>
+          <div><img src="/img/footer-box/4.jpg" alt="" /></div>
+          <div><img src="/img/footer-box/5.jpg" alt="" /></div>
+          <div><img src="/img/footer-box/6.jpg" alt="" /></div>
+		    </div>
+      </div>
