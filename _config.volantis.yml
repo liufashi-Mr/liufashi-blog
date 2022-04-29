@@ -53,8 +53,8 @@ navbar:
         - name: 友链
           icon: fas fa-link
           url: friends/
-        - name: D
-          icon: fas fa-link
+        - name: 草帽
+          icon: iconfont icon-svggeshi-
           url: one-piece/
   search: 搜索 # Search bar placeholder
 custom_css:
@@ -439,7 +439,7 @@ sidebar:
     # category widget
     category:
       class: category
-      display: [desktop,mobile] # [desktop, mobile]
+      display: [desktop, mobile] # [desktop, mobile]
       header:
         icon: fas fa-folder-open
         title: 文章分类
