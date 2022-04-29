@@ -9,6 +9,8 @@ tags:
   - react
   - typescript
   - FE
+pin: true
+headimg: /img/typescript-h5-template/headimg.png
 ---
 
 ## 介绍
@@ -261,20 +263,55 @@ alias: {
 按照我个人习惯的命名方式，项目结构如下：
 
 ```bash
-    ├── apis
-        ├── config.ts
-        ├── index.ts
-        ├── request.ts
-    ├── assets #资源文件
-    ├── components #项目组件
-    ├── pages #页面
-        ├──<Name> #页面名称 驼峰命名
-            ├── index.tsx
-            ├── index[.module].(scss|sass)
-    ├── router #路由配置
-    ├── utils #工具函数&&自定义hooks
+
+ medical-guidanceH5-web
+    ├── config
+    │     ├── webpack.config.js
+    │     └── ...
+    ├── script
+    │     ├── start.js
+    │     ├── build.js
+    │     └── test.ks
+    ├── .commitlintrc.js
+    ├── .eslintrc.js
+    ├── .prettierrc.js
+    ├── tsconfig.json
+    ├── package.json
+    ├── .gitignore
+    ├── .eslintignore
+    ├── public
+    │   ├── favicon.ico
+    │   └── index.html
+    ├── src
+    │    ├── apis
+    │    │     ├── config.ts
+    │    │     ├── index.ts
+    │    │     ├── request.ts
+    │    ├── assets #资源文件
+    │    ├── components #项目组件
+    │    ├── pages #页面
+    │    │      ├──<Name> #页面名称 驼峰命名
+    │    │          ├── index.tsx
+    │    │          ├── index[.module].(scss|sass)
+    │    ├── router #路由配置
+    │    └── utils #工具函数&&自定义hooks
+    ├── README.md
+    ├── package-lock.json
+    └── yarn.lock
+
+
 ```
+
+### 移动端适配
+
+> 一般情况下设计稿的设计师按照 375 的尺寸设计，然而，在现在移动终端（就是手机）快速更新的时代，每个品牌的手机都有着不同的物理分辨率，这样就会导致，每台设备的逻辑分辨率也不尽相同，此时 357 的设计稿，如果想要还原那基本是不可能了，因为如果一个左右布局，左边如果写死，右边自适应的话，每个设备的右边所展示的内容大小就不尽相同，这是移动端适配就显得尤其重要
+
+更多有关移动端适配的信息[移动端适配](https://juejin.cn/post/6844903631993454600)。
+本项目采用 rem 实现移动端的适配：
+通常的情况下给的 UI 给的设计稿一般为 375 或者 750。以 375 为例设计稿中给出的一个宽为 75 的 div，此时这个 div 占页面宽度的 1/5。我们需要实现的就是在一定的尺寸范围内不管页面尺寸为多少，这个 div 始终占 1/5。
+
+- 在代码中使用 rem 作为单位，
 
 ### 配置路由
 
-今天先到这里，明天再写！
+路由采用的是最新的 react-router-dom v6 版本，也是抱着使用同时学习的心态。首先呢
