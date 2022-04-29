@@ -11,15 +11,7 @@
   transition: all 1s;
   cursor: pointer;
 }
-#body:hover {
-  left: 150px;
-  bottom: 150px;
-}
-@media only screen and (max-width: 1200px) {
-  #body {
-    display: none;
-  }
-}
+
 #section {
   /* 相对定位 */
   position: relative;
@@ -36,7 +28,6 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #fff;
   transition: all 1s;
   outline: 1px solid transparent;
 }
@@ -44,43 +35,44 @@
   width: 100%;
   height: 100%;
   outline: 1px solid transparent;
+  opacity: 0.8;
 }
 #section div:nth-child(1) {
   transform: translateZ(50px);
 }
-#body:hover div:nth-child(1) {
+/* #body:hover div:nth-child(1) {
   transform: translateZ(175px);
-}
+} */
 #section div:nth-child(2) {
   transform: rotateX(-180deg) translateZ(50px);
 }
-#body:hover div:nth-child(2) {
+/* #body:hover div:nth-child(2) {
   transform: rotateX(-180deg) translateZ(175px);
-}
+} */
 #section div:nth-child(3) {
   transform: rotateX(90deg) translateZ(50px);
 }
-#body:hover div:nth-child(3) {
+/* #body:hover div:nth-child(3) {
   transform: rotateX(90deg) translateZ(175px);
-}
+} */
 #section div:nth-child(4) {
   transform: rotateX(-90deg) translateZ(50px);
 }
-#body:hover div:nth-child(4) {
+/* #body:hover div:nth-child(4) {
   transform: rotateX(-90deg) translateZ(175px);
-}
+} */
 #section div:nth-child(5) {
   transform: rotateY(90deg) translateZ(50px);
 }
-#body:hover div:nth-child(5) {
+/* #body:hover div:nth-child(5) {
   transform: rotateY(90deg) translateZ(175px);
-}
+} */
 #section div:nth-child(6) {
   transform: rotateY(-90deg) translateZ(50px);
 }
-#section:hover div:nth-child(6) {
+/* #section:hover div:nth-child(6) {
   transform: rotateY(-90deg) translateZ(175px);
-}
+} */
 #section div:nth-child(7) {
   transform: translateZ(50px);
 }
@@ -99,7 +91,91 @@
 #section div:nth-child(12) {
   transform: rotateY(-90deg) translateZ(50px);
 }
+@media (any-hover: hover) {
+  #body:hover {
+    left: 150px;
+    bottom: 150px;
+  }
+  #body:hover div:nth-child(1) {
+    transform: translateZ(175px);
+  }
 
+  #body:hover div:nth-child(2) {
+    transform: rotateX(-180deg) translateZ(175px);
+  }
+
+  #body:hover div:nth-child(3) {
+    transform: rotateX(90deg) translateZ(175px);
+  }
+
+  #body:hover div:nth-child(4) {
+    transform: rotateX(-90deg) translateZ(175px);
+  }
+
+  #body:hover div:nth-child(5) {
+    transform: rotateY(90deg) translateZ(175px);
+  }
+
+  #body:hover div:nth-child(6) {
+    transform: rotateY(-90deg) translateZ(175px);
+  }
+}
+@media only screen and (max-width: 1200px) {
+  #body:active {
+    left: 150px;
+    bottom: 150px;
+  }
+  #body:active div:nth-child(1) {
+    transform: translateZ(175px);
+  }
+
+  #body:active div:nth-child(2) {
+    transform: rotateX(-180deg) translateZ(175px);
+  }
+
+  #body:active div:nth-child(3) {
+    transform: rotateX(90deg) translateZ(175px);
+  }
+
+  #body:active div:nth-child(4) {
+    transform: rotateX(-90deg) translateZ(175px);
+  }
+
+  #body:active div:nth-child(5) {
+    transform: rotateY(90deg) translateZ(175px);
+  }
+
+  #body:active div:nth-child(6) {
+    transform: rotateY(-90deg) translateZ(175px);
+  }
+   #body:hover {
+    left: 150px;
+    bottom: 150px;
+  }
+  #body:hover div:nth-child(1) {
+    transform: translateZ(175px);
+  }
+
+  #body:hover div:nth-child(2) {
+    transform: rotateX(-180deg) translateZ(175px);
+  }
+
+  #body:hover div:nth-child(3) {
+    transform: rotateX(90deg) translateZ(175px);
+  }
+
+  #body:hover div:nth-child(4) {
+    transform: rotateX(-90deg) translateZ(175px);
+  }
+
+  #body:hover div:nth-child(5) {
+    transform: rotateY(90deg) translateZ(175px);
+  }
+
+  #body:hover div:nth-child(6) {
+    transform: rotateY(-90deg) translateZ(175px);
+  }
+}
 @keyframes spread-img {
   0% {
     transform: translateZ(50px);
