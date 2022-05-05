@@ -340,7 +340,7 @@ article:
       # ----------------
       # 打赏组件 (for layout: post/docs)
       donate:
-        enable: true
+        enable: false
         display: [desktop, mobile] # [desktop, mobile]
         images:
           - http://assets.liufashi.top/images/money/alipay.jpeg
