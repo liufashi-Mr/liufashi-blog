@@ -31,6 +31,9 @@ navbar:
         - name: my project
           icon: iconfont icon-my
           url: http://expo.liufashi.top
+        - name: typescript-react-template
+          icon: iconfont icon-typescript
+          url: http://h5.template.liufashi.top
     - name: 归档
       icon: fas fa-archive
       url: archives/
