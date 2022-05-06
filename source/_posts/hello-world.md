@@ -30,7 +30,7 @@ nginx -s reload #重载
 nginx -s reopen #重启
 ```
 
-### 修改 node_modules 包
+### patch-package 修改 node_modules 包
 
 ```bash
 npx patch-package 包名
