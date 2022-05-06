@@ -357,6 +357,321 @@ html {
   ],
 ```
 
-### 配置路由
+### 路由使用
 
-路由采用的是最新的 react-router-dom v6 版本，也是抱着使用同时学习的心态。首先呢
+路由的配置文件
+
+```typescript
+import React, { lazy } from "react";
+export interface RouteItem {
+  path: string; //路径,当路由为index路由时path为父级的path
+  component?: any; //懒加载组件
+  index?: true | false; //是否为默认子路由,配置后path属性为父级的path，用作key
+  redirect?: string; //重定向路由
+  children?: Array<RouteItem>;
+}
+const routes: Array<RouteItem> = [
+  {
+    path: "/",
+    redirect: "home",
+  },
+  {
+    path: "home",
+    component: lazy(() => import("@pages/Home")),
+  },
+  {
+    path: "todo",
+    children: [
+      {
+        path: "todo", //index路由的path仅仅是用作key
+        index: true,
+        component: lazy(() => import("@pages/TodoList")),
+      },
+      {
+        path: "test", //index路由的path仅仅是用作key
+        component: lazy(() => import("@pages/Test")),
+      },
+    ],
+  },
+  {
+    path: "message",
+    component: lazy(() => import("@/pages/Messages")),
+  },
+  {
+    path: "my",
+    component: lazy(() => import("@/pages/My")),
+  },
+  {
+    path: "*",
+    component: lazy(() => import("@pages/Error/404")),
+  },
+];
+export default routes;
+```
+
+路由的渲染规则
+
+```ts
+import React, { Suspense } from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import "lib-flexible";
+import routes, { RouteItem } from "./router";
+import Loading from "./components/Loading";
+const root = ReactDOM.createRoot(
+  document.getElementById("root") as HTMLElement
+);
+const routerMap: (routes: Array<RouteItem>) => Array<JSX.Element> = (
+  routes
+) => {
+  return routes.map((route) =>
+    !route.children?.length ? (
+      route.redirect ? (
+        route.index ? (
+          <Route
+            index
+            key={route.path}
+            element={<Navigate to={route.redirect} />}
+          />
+        ) : (
+          <Route
+            path={route.path}
+            key={route.path}
+            element={<Navigate to={route.redirect} />}
+          />
+        )
+      ) : route.index ? (
+        <Route index key={route.path} element={<route.component />} />
+      ) : (
+        <Route
+          key={route.path}
+          path={route.path}
+          element={<route.component />}
+        />
+      )
+    ) : (
+      <Route key={route.path} path={route.path}>
+        {routerMap(route.children)}
+      </Route>
+    )
+  );
+};
+root.render(
+  <BrowserRouter>
+    <Suspense fallback={<Loading />}>
+      <Routes>
+        <Route path="/" element={<App />}>
+          {routerMap(routes)}
+        </Route>
+      </Routes>
+    </Suspense>
+  </BrowserRouter>
+);
+```
+
+具体的配置根据业务需求配置。配置规则如下：
+
+- path：路由的路径，在路由渲染的时候还会当成 key 值使用，因此为必须参数。当子路由为父路由的默认路由时，path 参数仅作为 key 值，采用父路由的 path 即可，如：
+
+```ts
+ {
+    path: "todo",
+    children: [
+      {
+        path: "todo", //index路由的path仅仅是用作key
+        index: true,
+        component: lazy(() => import("@pages/TodoList")),
+      },
+      {
+        path: "test", //index路由的path仅仅是用作key
+        component: lazy(() => import("@pages/Test")),
+      },
+    ],
+  },
+```
+
+此时页面 url 为`/todo`时展示的 TodoList 组件，为`/todo/test`展示 Test 组件
+
+- component：渲染的组件，该参数在配置有 children 的父路由和 redirect 的路由中不用设置。
+- redirect：重定向的路径
+- index：子路由是否为默认路由
+
+如果你的两个组路由是同级的，觉得以上的两个明明都是子路由，但是他们的 url 为`/todo`和`/todo/test`看起来确是父子关系，也可以这样配置：
+
+```ts
+ {
+    path: "todo",
+    children: [
+       {
+        path: "todo",//用作key
+        index:true,
+        redirect: "test1",
+      },
+      {
+        path: "test1",
+        component: lazy(() => import("@pages/Test1")),
+      },
+      {
+        path: "test2",
+        component: lazy(() => import("@pages/Test2")),
+      },
+    ],
+  },
+```
+
+这样输入`/todo`会重定向到 test1，此时两个子路由的 url 为`/todo/test1`和`/todo/test2`。这样看起来就舒服很多了。
+
+由于 react-router-dom 中的 Routes 可以有多个，我们在配置子路由的时候还有另外一种方式：
+
+```typescript
+{
+  path:"test/*",
+  component: lazy(() => import("@pages/Test")),
+}
+```
+
+然后在 Test 中使用 Routes 和 Outlet
+
+```tsx
+import React from "react";
+import { Route, Routes, Outlet, Link } from "react-router-dom";
+import { Button } from "antd-mobile";
+const T1: React.FC<Record<string, never>> = () => {
+  return <div>test1 默认子路由</div>;
+};
+const T2: React.FC<Record<string, never>> = () => {
+  return <div>test2</div>;
+};
+const Test: React.FC<Record<string, never>> = () => {
+  return (
+    <div>
+      <Link to="/test">
+        <Button>to test1</Button>
+      </Link>
+      <Link to="test2">
+        <Button>to test2</Button>
+      </Link>
+      <Outlet />
+      <Routes>
+        <Route index element={<T1 />} />
+        <Route path="test2" element={<T2 />} />
+      </Routes>
+    </div>
+  );
+};
+
+export default Test;
+```
+
+输入/test 进入页面后默认路由为设置 index 属性了的 test1，点击按钮可以切换页面。
+{% gallery %}![默认页面](/img/typescript-h5-template/1.png){% endgallery %}
+这样与在 children 中配置 children 的区别是这种方式可以使子路由更容易的公用页面的一些通用部分。若是采用 children 的话则需要在每个子组件中引入。
+
+### 页面配置
+
+很多常见的应用都会有一个通用的导航栏，在首页等等几个初始页面会有如{% gallery %}![默认页面](/img/typescript-h5-template/2.png){% endgallery %}
+我们可以创建一个 Layout 组件，在需要这种布局的页面中引入该组件。
+
+```tsx
+import React from "react";
+import { TabBar } from "antd-mobile";
+import { useLocation, useNavigate } from "react-router-dom";
+import styles from "./index.module.scss";
+import {
+  AppOutline,
+  MessageOutline,
+  UnorderedListOutline,
+  UserOutline,
+} from "antd-mobile-icons";
+const tabs = [
+  {
+    key: "/home",
+    title: "首页",
+    icon: <AppOutline />,
+  },
+  {
+    key: "/todo",
+    title: "我的待办",
+    icon: <UnorderedListOutline />,
+  },
+  {
+    key: "/message",
+    title: "我的消息",
+    icon: <MessageOutline />,
+  },
+  {
+    key: "/my",
+    title: "个人中心",
+    icon: <UserOutline />,
+  },
+];
+const Layout: React.FC<any> = ({ children }) => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const { pathname } = location;
+
+  const setRouteActive = (value: string) => {
+    navigate(value);
+  };
+
+  return (
+    <div className={styles.container}>
+      {children}
+      <div className={styles.nav}>
+        <TabBar
+          activeKey={pathname}
+          onChange={(value) => setRouteActive(value)}
+        >
+          {tabs.map((item) => (
+            <TabBar.Item key={item.key} icon={item.icon} title={item.title} />
+          ))}
+        </TabBar>
+      </div>
+    </div>
+  );
+};
+
+export default Layout;
+```
+
+如 Home 组件
+
+```tsx
+import React from "react";
+import styles from "./index.module.scss";
+import Layout from "@components/Layout";
+const Home: React.FC<Record<string, never>> = () => {
+  return (
+    <Layout>
+      <div className={styles.test}>home</div>
+    </Layout>
+  );
+};
+export default Home;
+```
+
+### 修改主题色
+
+项目采用的是[antd-mobile](https://mobile.ant.design/zh)，根据官网提供的修改 css 变量的方式更改主题色等。只需要在 css 文件中修改以下变量，然后引入到 index.tsx 中即可
+
+```css
+:root:root {
+  --adm-color-primary: #1677ff;
+  --adm-color-success: #00b578;
+  --adm-color-warning: #ff8f1f;
+  --adm-color-danger: #ff3141;
+  --adm-color-white: #ffffff;
+  --adm-color-weak: #999999;
+  --adm-color-light: #cccccc;
+  --adm-border-color: #eeeeee;
+  --adm-font-size-main: 13px;
+  --adm-color-text: #333333;
+  --adm-font-family: -apple-system, blinkmacsystemfont, "Helvetica Neue",
+    helvetica, segoe ui, arial, roboto, "PingFang SC", "miui", "Hiragino Sans GB",
+    "Microsoft Yahei", sans-serif;
+}
+```
+
+到这里项目模板基本搭建完成，[github 地址](https://github.com/liufashi-Mr/h5-react-typescript)，[预览地址](http://h5.template.liufashi.top)，有问题可以直接下方评论，填写正确邮箱会通过邮件方式通知。
