@@ -675,3 +675,7 @@ export default Home;
 ```
 
 到这里项目模板基本搭建完成，[github 地址](https://github.com/liufashi-Mr/h5-react-typescript)，[预览地址](http://h5.template.liufashi.top)，有问题可以直接下方评论，填写正确邮箱会通过邮件方式通知。
+
+### axios 封装
+
+{% post_link ts-axios%}
