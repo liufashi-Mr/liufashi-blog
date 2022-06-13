@@ -13,6 +13,9 @@ pin: true
 
 ## 实现
 
+- 预览：[react-antd-admin](https://admin.template.liufashi.top)
+- github 仓库：[https://github.com/liufashi-Mr/react-antd-admin](https://github.com/liufashi-Mr/react-antd-admin)
+
 1. 实现三种后台的常见布局;
 2. 路由文件的单独配置;
 3. 布局主题的修改
@@ -30,9 +33,6 @@ pin: true
 1. 侧边布局：主导航放置于页面的左侧固定位置，辅助菜单放置于工作区顶部。适用于同时存在多级导航菜单，菜单多层嵌套的系统。
 2. 上下布局：主导航放置于页面的顶端。由于导航栏水平空间有限，适用于那些一级导航项没有很多的信息结构的系统。
 3. 顶部-侧边布局：同样拥有顶部导航及侧边栏，适用于应用型的网站，但是会牺牲部分内容空间。
-
-- 预览：[react-antd-admin](https://admin.template.liufashi.top)
-- github 仓库：[https://github.com/liufashi-Mr/react-antd-admin](https://github.com/liufashi-Mr/react-antd-admin)
 
 ## 项目目录
 
