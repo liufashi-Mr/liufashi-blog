@@ -340,6 +340,7 @@ div {
 ```css
 html {
   font-size: 2.6667vw !important; //750的设计稿则为1.3333vw
+}
 ```
 
 #### 项目实现

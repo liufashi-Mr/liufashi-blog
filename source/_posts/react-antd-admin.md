@@ -1,5 +1,5 @@
 ---
-title: 造轮子之后台管理模板
+title: 造轮子之后台管理模板的使用
 date: 2022-06-13 18:05:12
 categories:
   - FE
@@ -8,6 +8,7 @@ tags:
   - react
   - FE
   - admin
+  - react-router-dom v6
 pin: true
 ---
 
@@ -196,6 +197,14 @@ li {
 ```
 
 若需要动态修改可以参考[定制主题](https://ant.design/docs/react/customize-theme-variable-cn),也可以使用 antd-theme-generator 插件通过 less.modifyVars 的方式修改主题色
+
+4. 新建页面: 在 pages 中创建 index.jsx, 新建样式 index.less|index.css|index.(scss|sass),与 cra 中不同的是,cra 项目中为了避免样式污染会采用 index.module.scss 这种写法,我觉得项目中使用到 module 的地方会远远高于普通的.因此做了修改,直接使用 index.(sass|less)即可.若不需要使用则新建名为 index.common.(less|scss).
+
+5. 项目规范配置可以参考 {% post_link rules%}
+
+6. 给项目添加 axios 可以参考{% post_link ts-axios%}
+
+7. 关于项目是如何通过 react-router-dom v6 实现路由的渲染可以参考{% post_link typescript-h5-template %},或者将项目拉下来了解一下.
 
 ## 规范
 
