@@ -4,6 +4,7 @@
 .md .footer .donate .imgs img:first-child {
    margin-right: 48px;
 }
+
 #body {
   /* 弹性布局 让页面元素垂直+水平居中 */
   display: flex;
@@ -17,7 +18,11 @@
   transition: all 1s;
   cursor: pointer;
 }
-
+@media only screen and (max-width: 1200px) {
+  #body {
+    display: none;
+  }
+}
 #section {
   /* 相对定位 */
   position: relative;

@@ -9,7 +9,6 @@ tags:
   - FE
   - admin
   - react-router-dom v6
-pin: true
 ---
 
 ## 实现
