@@ -14,7 +14,7 @@ tags:
 参考:[微信公众号定时提醒女友今日天气以及距离发薪日还有多久](https://juejin.cn/post/7013561558303244324)
 以上答主已经写的非常详细了,不过关于接口配置信息那一块我还想说两句, 另外我也根据我编写 node 代码的习惯改了下一项目目录,最后的效果如下{% gallery %}![效果](https://blog.liufashi.top/img/office-account/1.jpg){% endgallery %}
 
-不想自己搞 [源码奉上](https://github.com/liufashi-Mr/office-count-public)
+如果你不想看了 [源码奉上](https://github.com/liufashi-Mr/office-count-public)
 
 ## 前提
 
