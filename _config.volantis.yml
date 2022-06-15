@@ -28,6 +28,9 @@ navbar:
         - name: csdn
           icon: iconfont icon-csdn
           url: https://blog.csdn.net/weixin_44134674?type=blog
+        - name: juejin
+          icon: iconfont icon-juejin
+          url: https://juejin.cn/user/3452921774353399
         - name: my project
           icon: iconfont icon-my
           url: http://expo.liufashi.top
