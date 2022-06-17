@@ -54,8 +54,10 @@
   <script src="https://widget.qweather.net/standard/static/js/he-standard-common.js?v=2.0"></script>
   <script>
     window.onload = () => {
-      const res = document.getElementsByClassName("wv-lt-refresh")
-      res[0].style.display = "none"
+      const data = document.getElementsByClassName("wv-lt-refresh")
+      data[0].style.display = "none"
+      const location = document.getElementsByClassName("wv-lt-location")
+      location[0].children[1].style.display = "none"
     }
   </script>
 </body>
