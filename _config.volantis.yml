@@ -45,6 +45,9 @@ navbar:
       url: archives/
     - name: 音乐
       icon: fas fa-compact-disc
+    - name: 天气
+      icon: iconfont icon-chatianqi
+      url: weather/
     - name: 开/关灯
       icon: fa fa-moon
       toggle: darkmode

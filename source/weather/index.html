@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .container_weather {
+    width: 280px;
+    margin: 0 auto;
+  }
+
+  #he-plugin-standard {
+    margin: 0 auto !important;
+  }
+</style>
+
+<body>
+  <div class="container_weather">
+    <div id="he-plugin-standard"></div>
+  </div>
+  <script>
+    var w = document.documentElement.clientWidth;
+    if (w < 1120) {
+      WIDGET = {
+        "CONFIG": {
+          "layout": "2",
+          "width": 250,
+          "height": 300,
+          "background": "1",
+          "dataColor": "FFC0CB",
+          "borderRadius": "10",
+          "key": "49e29c3858d24d50873347961a42aef2"
+        }
+      }
+    } else {
+      WIDGET = {
+        "CONFIG": {
+          "layout": "1",
+          "width": 600,
+          "height": 150,
+          "background": "1",
+          "dataColor": "FFFFFF",
+          "aqiColor": "FFC0CB",
+          "borderRadius": "10",
+          "key": "698ec618a28b49b1b6d6f8766e71b82d"
+        }
+      }
+    }
+  </script>
+  <script src="https://widget.qweather.net/standard/static/js/he-standard-common.js?v=2.0"></script>
+</body>
+
+</html>
