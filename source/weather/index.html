@@ -52,6 +52,12 @@
     }
   </script>
   <script src="https://widget.qweather.net/standard/static/js/he-standard-common.js?v=2.0"></script>
+  <script>
+    window.onload = () => {
+      const res = document.getElementsByClassName("wv-lt-refresh")
+      res[0].style.display = "none"
+    }
+  </script>
 </body>
 
 </html>
