@@ -229,3 +229,13 @@ commit 规范
 - release: 流水线自动生成,在测试环境通过测试后将生成的 release 分支合进 master 并且勾选删除源分支,减少多余的分支
 
 提交合并请求时需选择非自己的评审人查阅代码。
+
+## 其他配置
+
+### 优雅使用 svg
+
+{% post_link svgUse%}
+
+### axios 封装
+
+{% post_link ts-axios%}
