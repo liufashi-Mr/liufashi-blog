@@ -119,7 +119,7 @@ module.exports = {
 
 ### commit 规则
 
-新建.commitlintrc.js 文件，添加如下规范。这个也是目前主流的 commit 规则，我看好多 git 上的项目使用的都是这一套规范，安装依赖`npm i @commitlint/cli @commitlint/config-conventional" -D`。
+新建.commitlintrc.js 文件，添加如下规范。这个也是目前主流的 commit 规则，我看好多 git 上的项目使用的都是这一套规范，安装依赖`npm i @commitlint/cli @commitlint/config-conventional -D`。
 
 ```js
 module.exports = {
