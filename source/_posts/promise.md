@@ -1,5 +1,5 @@
 ---
-title: js异步编程、Promise的应用以及在循环中使用Promise。
+title: js异步编程、Promise的应用以及在循环中、递归的时候使用Promise。
 date: 2022-07-01 16:45:00
 categories:
   - FE
