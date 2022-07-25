@@ -530,7 +530,7 @@ comments:
     enableQQ: true
 plugins:
   gitter:
-    room: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    room: https://gitter.im/Communication-technology/community#
   wordcount:
     enable: true
   message:
