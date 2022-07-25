@@ -529,8 +529,9 @@ comments:
     avatar: mp
     enableQQ: true
 plugins:
-  # gitter:
-  #   room: Communication-technology/community#
+  chat_service: gitter
+  gitter:
+    room: Communication-technology/community
   wordcount:
     enable: true
   message:
