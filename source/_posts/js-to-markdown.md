@@ -43,7 +43,9 @@ const getContent = (data) => {
       return replacement.replace(/\/\*text/g, "").replace(/\*\//g, "");
     })
     .replace(regQuote, (replacement) => {
-      return ">" + replacement.replace(/\/\*quote/g, "").replace(/\*\//g, "");
+      return (
+        ">" + replacement.replace(/\/\*quote\s+/g, "").replace(/\*\//g, "")
+      );
     })
     .replace(regCode, (replacement) => {
       return replacement.replace(/\/\/```/g, "```");
