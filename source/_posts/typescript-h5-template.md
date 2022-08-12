@@ -9,7 +9,6 @@ tags:
   - react
   - typescript
   - FE
-pin: true
 headimg: /img/typescript-h5-template/headimg.png
 ---
 
