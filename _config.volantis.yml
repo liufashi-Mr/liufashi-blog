@@ -588,7 +588,7 @@ plugins:
     duration: 10000 # Duration (ms)
     fade: 1500 # fade duration (ms) (Not more than 1500)
     images: # For personal use only. At your own risk if used for commercial purposes !!!
-      - /img/blog-bg.jpeg
+      - /img/bg-5.jpeg
   code_highlight: highlightjs # highlightjs or prismjs
   # highlight.js
   highlightjs:
