@@ -334,3 +334,27 @@ const cycle = setInterval(async function () {
 ```
 
 到此就全部完成了。如果需要添加新的提醒只需要： 在 posts 文件夹中新增逻辑-->在公众号中添加模板-->在 app.js 中引入添加执行条件
+
+## 源码拉下来怎么使用呢？
+
+基于有些小伙伴可能没有学习过 node/javascript，现在将源码使用方式贴一下
+首先找个目录下克隆代码`git clone https://github.com/liufashi-Mr/office-count-public.git`，然后进如该目录`cd office-count-public`，执行`npm install`安装依赖，如果不知到没有安装 npm 可以百度下安装方法。
+然后点击[这个地址](https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=sandbox/login)微信登录
+然后将这两个信息填到{% gallery %}![templateId](https://blog.liufashi.top/img/office-account/8.png){% endgallery %}
+这里
+{% gallery %}![templateId](https://blog.liufashi.top/img/office-account/7.png){% endgallery %}
+然后验证 token
+{% gallery %}![templateId](https://blog.liufashi.top/img/office-account/11.png){% endgallery %}
+这里的 token 需要与代码中的一致
+{% gallery %}![templateId](https://blog.liufashi.top/img/office-account/12.png){% endgallery %}
+点击提交后会有验证通过的提示，这里的前提是你需要购买一个云服务器，当然你也可以用家里宽带的桥接模式+公网ip+然后把自己电脑一直开着当做一个服务器（不如直接买云服务器）。
+然后扫码关注测试公众号，将关注的人的加密后的微信号
+{% gallery %}![templateId](https://blog.liufashi.top/img/office-account/9.png){% endgallery %}
+填到这里，
+还需要在高德天气上申请账号，把对应内容也填上
+{% gallery %}![templateId](https://blog.liufashi.top/img/office-account/10.png){% endgallery %}
+然后生成模板，将模板ID填到代码中，参数要与代码对应
+{% gallery %}![templateId](https://blog.liufashi.top/img/office-account/13.png){% endgallery %}
+{% gallery %}![templateId](https://blog.liufashi.top/img/office-account/14.png){% endgallery %}
+{% gallery %}![templateId](https://blog.liufashi.top/img/office-account/15.png){% endgallery %}
+然后将posts文件夹下面两个文件的文字信息改成自己想要的就可以了
