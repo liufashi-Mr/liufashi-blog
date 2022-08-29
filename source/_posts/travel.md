@@ -1,7 +1,11 @@
 ---
-title: travel
+title: 广州两日计划
 date: 2022-08-28 17:11:12
+categories:
+  - 旅游
 tags:
+  - 旅游
+  - 生活
 ---
 
 day 9.9：地沟油一条街
