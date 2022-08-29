@@ -74,7 +74,7 @@ function curry(fn) {
       return function (...args2) {
         // 之前传入的参数都储存在 args2 中
         // 递归执行，重复之前的过程
-        return curried(...args.concat(args2));
+        return curried([...args, ...args2]);
       };
     } else {
       // 输入了全部的参数直接将参数给fn
