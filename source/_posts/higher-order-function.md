@@ -1,5 +1,5 @@
 ---
-title: 高阶函数之柯里化和组合函数
+title: 柯里化和组合函数
 date: 2022-08-29 16:35:50
 categories:
   - FE
@@ -8,15 +8,11 @@ tags:
   - javascript
 ---
 
-## 高阶函数
-
-简单的说高阶函数就是一个函数就可以接收另一个函数作为参数，这种函数就称之为高阶函数
-
 ## 柯里化
 
 > 柯里化是一种函数的转换，它是指将一个函数从可调用的 f(a, b, c) 转换为可调用的 f(a)(b)(c)。柯里化不会调用函数。它只是对函数进行转换。
 
-柯里化的作用是函数执行产生一个闭包，把一些信息预先存储起来供下级上下文使用。
+柯里化的作用是函数执行产生一个闭包，把一些信息预先存储起来供下级上下文使用。柯里化就是闭包一个很典型的应用。
 代码实现
 
 ```javascript
@@ -57,16 +53,35 @@ var abc = function (a, b, c) {
 
 var curried = _.curry(abc);
 
+// 如果传入了部分的参数，此时它会返回当前函数，并且等待接收剩余参数
 curried(1)(2)(3);
 // => [1, 2, 3]
-
 curried(1, 2)(3);
 // => [1, 2, 3]
-
+// 如果输入了全部的参数，则立即返回结果
 curried(1, 2, 3);
 // => [1, 2, 3]
-
-// Curried with placeholders.
-curried(1)(_, 3)(2);
-// => [1, 2, 3]
 ```
+
+那我们可以试试是实现这个效果
+
+```javascript
+function curry(fn) {
+  return function curried(...args) {
+    // fn的length属性指明函数的形参个数。args的长度少于形参个数对应上面的传入部分参数
+    // 如果传入参数 args.length 小于 fn 函数的形参个数 fn.length，需要重新递归
+    if (args.length < fn.length) {
+      return function (...args2) {
+        // 之前传入的参数都储存在 args2 中
+        // 递归执行，重复之前的过程
+        return curried(...args.concat(args2));
+      };
+    } else {
+      // 输入了全部的参数直接将参数给fn
+      return fn(...args);
+    }
+  };
+}
+```
+
+## 组合函数
