@@ -74,7 +74,7 @@ function curry(fn) {
       return function (...args2) {
         // 之前传入的参数都储存在 args2 中
         // 递归执行，重复之前的过程
-        return curried([...args, ...args2]);
+        return curried(...args.concat(args2));
       };
     } else {
       // 输入了全部的参数直接将参数给fn
@@ -85,3 +85,44 @@ function curry(fn) {
 ```
 
 ## 组合函数
+
+先看个例子
+
+```javascript
+const a = (x) => x + 1;
+const b = (x) => x - 2;
+const c = (x) => x * 3;
+console.log(a(b(c(2)))); //5
+```
+
+上面是把 `c(2)`的结果作为参数传给 `b` 再将 `b(c(2))`的结果作为参数传给 `c`，但是这样写多少有点不够优雅
+
+```javascript
+const a = (x) => x + 1;
+const b = (x) => x - 2;
+const c = (x) => x * 3;
+console.log(a(b(c(2))));
+const compose = (...funcs) => {
+  // 空不作处理直接把入参返回
+  if (funcs.length === 0) return (args) => args;
+  // 只有一个参数直接返回这个函数，因为下面使用的reduce必须要至少两个参数
+  if (funcs.length === 1) return funcs[0];
+
+  if (funcs.length > 1)
+    return funcs.reduce(
+      (a, b) =>
+        (...args) =>
+          a(b(...args))
+    );
+};
+const composed = compose(c);
+console.log(composed(2));
+```
+
+以上这个实现参考的是 redux 中 compose 的实现
+{% gallery %}![redux 中 compose 的实现](https://blog.liufashi.top/img/curing_compose/compose.png){% endgallery %}
+
+## 总结
+
+> 柯里化思想，利用闭包，把一些信息预先存储起来，目的是供下级上下文使用。
+> 组合函数，把处理的函数数据像管道一样连接起来，然后让数据穿过管道连接起来，得到最终的结果。
