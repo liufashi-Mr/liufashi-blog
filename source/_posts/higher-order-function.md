@@ -6,6 +6,7 @@ categories:
   - javascript
 tags:
   - javascript
+  - 高阶函数
 ---
 
 ## 柯里化
