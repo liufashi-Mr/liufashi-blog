@@ -59,7 +59,7 @@ server {
 然后我们可以打开控制台，-> Network->刷新 然后你就可以看到请求头被加上去了
 {% gallery %}![结果](https://blog.liufashi.top/img/nginx-envtag/2.png){% endgallery %}
 
-然后就可以添加不同的请求头来达到切换灰度环境的效果
+然后就可以添加不同的请求头来达到切换灰度环境的效果，大家可以尝试下通过开关`envtag：abcde`来看看我这个项目的新老版本[www.liufashi.top](https://www.liufashi.top)
 
 ## 完整流程
 
