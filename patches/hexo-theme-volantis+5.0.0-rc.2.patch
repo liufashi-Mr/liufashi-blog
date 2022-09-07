@@ -1,5 +1,5 @@
 diff --git a/node_modules/hexo-theme-volantis/_config.yml b/node_modules/hexo-theme-volantis/_config.yml
-index 2672946..5063db8 100755
+index 2672946..5063db8 100644
 --- a/node_modules/hexo-theme-volantis/_config.yml
 +++ b/node_modules/hexo-theme-volantis/_config.yml
 @@ -18,7 +18,7 @@ default:
@@ -433,7 +433,7 @@ index 76877f5..9af227a 100644
        </div>
      <% } %>
 diff --git a/node_modules/hexo-theme-volantis/layout/_partial/archive.ejs b/node_modules/hexo-theme-volantis/layout/_partial/archive.ejs
-index 2c94175..0f3d472 100755
+index 2c94175..0f3d472 100644
 --- a/node_modules/hexo-theme-volantis/layout/_partial/archive.ejs
 +++ b/node_modules/hexo-theme-volantis/layout/_partial/archive.ejs
 @@ -47,7 +47,7 @@
@@ -455,7 +455,7 @@ index 2c94175..0f3d472 100755
            </a>
          <% } %>
 diff --git a/node_modules/hexo-theme-volantis/layout/_partial/article.ejs b/node_modules/hexo-theme-volantis/layout/_partial/article.ejs
-index dba3a43..ce477fd 100755
+index dba3a43..ce477fd 100644
 --- a/node_modules/hexo-theme-volantis/layout/_partial/article.ejs
 +++ b/node_modules/hexo-theme-volantis/layout/_partial/article.ejs
 @@ -96,13 +96,13 @@
@@ -503,7 +503,7 @@ index f9f33f4..3d138a9 100644
      </div>
  <% } %>
 diff --git a/node_modules/hexo-theme-volantis/layout/_partial/footer.ejs b/node_modules/hexo-theme-volantis/layout/_partial/footer.ejs
-index 66aa112..c9baf73 100755
+index 66aa112..c9baf73 100644
 --- a/node_modules/hexo-theme-volantis/layout/_partial/footer.ejs
 +++ b/node_modules/hexo-theme-volantis/layout/_partial/footer.ejs
 @@ -41,7 +41,7 @@
@@ -516,7 +516,7 @@ index 66aa112..c9baf73 100755
          <% } %>
        <% } else if (item == 'source') { %>
 diff --git a/node_modules/hexo-theme-volantis/layout/_partial/head.ejs b/node_modules/hexo-theme-volantis/layout/_partial/head.ejs
-index 282fdad..568e390 100755
+index 282fdad..568e390 100644
 --- a/node_modules/hexo-theme-volantis/layout/_partial/head.ejs
 +++ b/node_modules/hexo-theme-volantis/layout/_partial/head.ejs
 @@ -26,7 +26,13 @@
@@ -535,7 +535,7 @@ index 282fdad..568e390 100755
    <!-- import meta -->
    <%_ if (config.import && config.import.meta){ _%>
 diff --git a/node_modules/hexo-theme-volantis/layout/_partial/header.ejs b/node_modules/hexo-theme-volantis/layout/_partial/header.ejs
-index 32d3a64..d714dc2 100755
+index 32d3a64..d714dc2 100644
 --- a/node_modules/hexo-theme-volantis/layout/_partial/header.ejs
 +++ b/node_modules/hexo-theme-volantis/layout/_partial/header.ejs
 @@ -4,9 +4,9 @@
@@ -755,7 +755,7 @@ index b1adc10..07da448 100644
  
    // 打开并搜索 字符串 s
 diff --git a/node_modules/hexo-theme-volantis/layout/_widget/webinfo.ejs b/node_modules/hexo-theme-volantis/layout/_widget/webinfo.ejs
-index 35f587d..b51e7bd 100644
+index ed078c6..62ea7f5 100644
 --- a/node_modules/hexo-theme-volantis/layout/_widget/webinfo.ejs
 +++ b/node_modules/hexo-theme-volantis/layout/_widget/webinfo.ejs
 @@ -29,9 +29,9 @@
@@ -783,7 +783,7 @@ index 35f587d..b51e7bd 100644
          </div>
        <% } %>
 diff --git a/node_modules/hexo-theme-volantis/layout/archive.ejs b/node_modules/hexo-theme-volantis/layout/archive.ejs
-index 75dc353..1390cef 100755
+index 75dc353..1390cef 100644
 --- a/node_modules/hexo-theme-volantis/layout/archive.ejs
 +++ b/node_modules/hexo-theme-volantis/layout/archive.ejs
 @@ -21,7 +21,7 @@
@@ -796,7 +796,7 @@ index 75dc353..1390cef 100755
  									<% if (post.icon) { %>
  										&nbsp;<i class="<%- post.icon %>" aria-hidden="true"></i>
 diff --git a/node_modules/hexo-theme-volantis/layout/category.ejs b/node_modules/hexo-theme-volantis/layout/category.ejs
-index aec2a46..988a2c6 100755
+index aec2a46..988a2c6 100644
 --- a/node_modules/hexo-theme-volantis/layout/category.ejs
 +++ b/node_modules/hexo-theme-volantis/layout/category.ejs
 @@ -15,7 +15,7 @@ if (!page.robots) {
@@ -809,7 +809,7 @@ index aec2a46..988a2c6 100755
                      (<%- category.posts.length %>)
                    </span>
 diff --git a/node_modules/hexo-theme-volantis/layout/friends.ejs b/node_modules/hexo-theme-volantis/layout/friends.ejs
-index 6e15e88..20f4f8a 100755
+index 6e15e88..20f4f8a 100644
 --- a/node_modules/hexo-theme-volantis/layout/friends.ejs
 +++ b/node_modules/hexo-theme-volantis/layout/friends.ejs
 @@ -29,7 +29,7 @@
@@ -822,7 +822,7 @@ index 6e15e88..20f4f8a 100755
                          </div>
                        <% } %>
 diff --git a/node_modules/hexo-theme-volantis/layout/layout.ejs b/node_modules/hexo-theme-volantis/layout/layout.ejs
-index 1ca9125..a785d86 100755
+index 1ca9125..bfad45c 100644
 --- a/node_modules/hexo-theme-volantis/layout/layout.ejs
 +++ b/node_modules/hexo-theme-volantis/layout/layout.ejs
 @@ -1,28 +1,150 @@
@@ -874,7 +874,7 @@ index 1ca9125..a785d86 100755
    <!-- Custom Files bodyEnd end-->
 -  </body>
 +</body>
-+<script>
++<!-- <script>
 +  //鼠标点击雪花特效
 +  (function fairyDustCursor() {
 +
@@ -993,10 +993,9 @@ index 1ca9125..a785d86 100755
 +    }
 +    init();
 +  })();
-+</script>
++</script> -->
 +
  </html>
-\ No newline at end of file
 diff --git a/node_modules/hexo-theme-volantis/scripts/generator/build-config.js b/node_modules/hexo-theme-volantis/scripts/generator/build-config.js
 new file mode 100644
 index 0000000..9f0571f
@@ -1068,7 +1067,7 @@ index 8b37e9a..2a55e3c 100644
  .iziToast>.iziToast-body .iziToast-icon
    &.red
 diff --git a/node_modules/hexo-theme-volantis/source/js/app.js b/node_modules/hexo-theme-volantis/source/js/app.js
-index 5985f00..605c174 100755
+index 5985f00..605c174 100644
 --- a/node_modules/hexo-theme-volantis/source/js/app.js
 +++ b/node_modules/hexo-theme-volantis/source/js/app.js
 @@ -43,7 +43,7 @@ Object.freeze(locationHash);
@@ -1265,7 +1264,7 @@ index 6a47a80..8647b59 100644
      }
    }
 diff --git a/node_modules/hexo-theme-volantis/source/js/plugins/rightMenu.js b/node_modules/hexo-theme-volantis/source/js/plugins/rightMenu.js
-index 487d170..26d600e 100644
+index a925e62..30fba40 100644
 --- a/node_modules/hexo-theme-volantis/source/js/plugins/rightMenu.js
 +++ b/node_modules/hexo-theme-volantis/source/js/plugins/rightMenu.js
 @@ -1,7 +1,7 @@
