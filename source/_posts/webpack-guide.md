@@ -60,7 +60,7 @@ if (module.hot) {
 }
 ```
 
-这样其实还是非常麻烦，我们通常在项目开发中会借助对应的 loader `vue-loader`, `react-hot-loader`。
+这样其实还是非常麻烦，我们通常在项目开发中会借助对应的比如create-react-app中使用的babel-plugin`react-refresh/babel`。在后面[搭建react脚手架](https://blog.liufashi.top/2022/09/08/react-cli//#%E8%84%9A%E6%89%8B%E6%9E%B6%E6%90%AD%E5%BB%BA)的时候会用到
 
 ### 使用 oneOf
 
