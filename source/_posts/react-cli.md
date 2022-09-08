@@ -31,3 +31,7 @@ npx create-cli create [name]
 like this
 
 {% gallery %}![选择](https://blog.liufashi.top/img/typescript-h5-template/cli.png){% endgallery %}
+
+选择第一个是常见空的脚手架，可以选择js或者ts（ts还没写完）
+选择第二个是react+antd 的中后台管理模板 [详情](https://blog.liufashi.top/2022/06/13/react-antd-admin/)
+选择第二个是react+typescript+ant-mobile h5模板（仅提供常见配置） [详情](https://blog.liufashi.top/2022/04/27/typescript-h5-template/)
