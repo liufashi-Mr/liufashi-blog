@@ -40,6 +40,9 @@ navbar:
         - name: react-antd-admin
           icon: iconfont icon-react
           url: http://admin.template.liufashi.top
+        - name: rain-ui
+          icon: iconfont icon-react
+          url: http://rain-ui.liufashi.top
     - name: 归档
       icon: fas fa-archive
       url: archives/
