@@ -12,6 +12,33 @@ tags:
 headimg: /img/typescript-h5-template/headimg.png
 ---
 
+## 使用指南
+
+### 通过git clone
+
+```shell
+git clone https://github.com/liufashi-Mr/h5-react-typescript.git
+```
+
+### 通过脚手架
+
+[npm地址](https://www.npmjs.com/package/react-client-create)
+
+```shell
+# global install
+npm i react-client-create -g
+# and then run
+create-cli create [name]
+
+# or
+npm i react-client-create
+#then run
+npx create-cli create [name]
+```
+
+选择第三个
+![选择](https://blog.liufashi.top/img/typescript-h5-template/cli.png)
+
 ## 介绍
 
 &#8195;&#8195;项目为基于 create-react-app 后面称为 cra 实现的移动端的一个项目模板。从零开始的项目构建，包括路由配置（react-router-dom v6），lint 规则，commit 规则，移动端适配等等。大家可以基于这个项目进行修改，[github 地址](https://github.com/liufashi-Mr/h5-react-typescript)，[预览地址](http://h5.template.liufashi.top)，也可以按照我的思路自己去搭建一遍。

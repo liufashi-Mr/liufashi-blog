@@ -11,6 +11,34 @@ tags:
   - react-router-dom v6
 ---
 
+
+## 使用指南
+
+### 通过git clone
+
+```shell
+git clone https://github.com/liufashi-Mr/react-antd-admin.git
+```
+
+### 通过脚手架
+
+[npm地址](https://www.npmjs.com/package/react-client-create)
+
+```shell
+# global install
+npm i react-client-create -g
+# and then run
+create-cli create [name]
+
+# or
+npm i react-client-create
+#then run
+npx create-cli create [name]
+```
+
+选择第二个
+![选择](https://blog.liufashi.top/img/typescript-h5-template/cli.png)
+
 ## 实现
 
 - 预览：[react-antd-admin](https://admin.template.liufashi.top)
