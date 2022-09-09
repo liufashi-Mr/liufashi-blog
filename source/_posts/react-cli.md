@@ -267,8 +267,15 @@ module.exports = {
 大概步骤就是
 
 1. 创建执行文件，`npm link`链接到本地 方便调试
-2. 下载commander，通过version，command，action三个api实现
-3. 下载child_process，子进程，执行git命令和shell命令
+2. 下载commander，通过一下api实现
+    - command：自定义执行的命令
+    - option：可选参数
+    - alias：用于 执行命令的别名
+    - description：命令描述
+    - action：执行命令后所执行的方法
+    - usage：用户使用提示
+    - parse：解析命令行参数，注意这个方法一定要放到最后调用
+3. 下载child_process，子进程，在process.exec()中可执行git命令和shell命令
 4. 通过inquirer提供可视化选项
 5. 使用ora，figlet等等优化细节，美化界面
 
@@ -330,6 +337,7 @@ const getClone = (type, name) => {
 program
   .version(require("../package.json").version)
   .command("create <name>")
+  .alias("c")
   .action((name) => {
     figlet(`react - client`).then((data) => {
       console.log(chalk.yellow(data));
@@ -381,6 +389,7 @@ program
     });
   });
 program.parse(process.argv);
+
 ```
 
 最后发布到npm中[npm地址](https://www.npmjs.com/package/react-client-create)
