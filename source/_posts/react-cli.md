@@ -1,6 +1,6 @@
 ---
 title: 搭建react脚手架，以及脚手架工具
-date: 2022-08-12 19:40:33
+date: 2022-09-08 19:40:33
 categories:
   - react
   - 开发工具
@@ -12,7 +12,7 @@ tags:
 
 ## 使用指南
 
-[npm地址](https://www.npmjs.com/package/react-client-create)
+[npm 地址](https://www.npmjs.com/package/react-client-create)
 
 ```shell
 # global install
@@ -30,15 +30,15 @@ like this
 
 {% gallery %}![选择](https://blog.liufashi.top/img/typescript-h5-template/cli.png){% endgallery %}
 
-选择第一个是常见空的脚手架，可以选择js或者ts（ts还没写完）
-选择第二个是react+antd 的中后台管理模板 [详情](https://blog.liufashi.top/2022/06/13/react-antd-admin/)
-选择第二个是react+typescript+ant-mobile h5模板（仅提供常见配置） [详情](https://blog.liufashi.top/2022/04/27/typescript-h5-template/)
+选择第一个是常见空的脚手架，可以选择 js 或者 ts（ts 还没写完）
+选择第二个是 react+antd 的中后台管理模板 [详情](https://blog.liufashi.top/2022/06/13/react-antd-admin/)
+选择第二个是 react+typescript+ant-mobile h5 模板（仅提供常见配置） [详情](https://blog.liufashi.top/2022/04/27/typescript-h5-template/)
 
 ## 脚手架搭建
 
 项目[源码](https://github.com/liufashi-Mr/react-cli)
 
-webpack配置贴这里，里面有注释解释了各个loader或者插件的作用,也可以参考[webpack优化指南](https://blog.liufashi.top/2022/09/07/webpack-guide/)来详细了解其中的配置
+webpack 配置贴这里，里面有注释解释了各个 loader 或者插件的作用,也可以参考[webpack 优化指南](https://blog.liufashi.top/2022/09/07/webpack-guide/)来详细了解其中的配置
 
 ```js
 const path = require("path");
@@ -257,7 +257,6 @@ module.exports = {
   mode: isProduction ? "production" : "development",
   devtool: isProduction ? "source-map" : "cheap-module-source-map",
 };
-
 ```
 
 ## 脚手架工具
@@ -267,17 +266,17 @@ module.exports = {
 大概步骤就是
 
 1. 创建执行文件，`npm link`链接到本地 方便调试
-2. 下载commander，通过一下api实现
-    - command：自定义执行的命令
-    - option：可选参数
-    - alias：用于 执行命令的别名
-    - description：命令描述
-    - action：执行命令后所执行的方法
-    - usage：用户使用提示
-    - parse：解析命令行参数，注意这个方法一定要放到最后调用
-3. 下载child_process，子进程，在process.exec()中可执行git命令和shell命令
-4. 通过inquirer提供可视化选项
-5. 使用ora，figlet等等优化细节，美化界面
+2. 下载 commander，通过一下 api 实现
+   - command：自定义执行的命令
+   - option：可选参数
+   - alias：用于 执行命令的别名
+   - description：命令描述
+   - action：执行命令后所执行的方法
+   - usage：用户使用提示
+   - parse：解析命令行参数，注意这个方法一定要放到最后调用
+3. 下载 child_process，子进程，在 process.exec()中可执行 git 命令和 shell 命令
+4. 通过 inquirer 提供可视化选项
+5. 使用 ora，figlet 等等优化细节，美化界面
 
 贴个代码
 
@@ -303,11 +302,11 @@ const getClone = (type, name) => {
       url = "https://github.com/liufashi-Mr/react-cli.git ";
       break;
     }
-    case "admin template (with react + ant-design)": {
+    case "2": {
       url = "https://github.com/liufashi-Mr/react-antd-admin.git ";
       break;
     }
-    case "h5 template (with react + ant-mobile)": {
+    case "3": {
       url = "https://github.com/liufashi-Mr/h5-react-typescript.git ";
       break;
     }
@@ -321,7 +320,7 @@ const getClone = (type, name) => {
     }
     console.log(stdout);
     process.exec(
-     `cd ${name} && rm -rf .git && git init && git add . && git commit -m "init with create-cli"`,
+      `cd ${name} && rm -rf .git && git init && git add . && git commit -m "init with create-cli"`,
       (error, stdout, stderr) => {
         if (error !== null) {
           spinner.fail("exec error: " + error);
@@ -348,9 +347,9 @@ program
             name: "type",
             message: "which do you want",
             choices: [
-              "only react-cli ( you can user-defined )",
-              "admin template ( with react + ant-design )",
-              "h5 template (with react + ant-mobile )",
+              "1. only react-cli ( you can user-defined )",
+              "2. admin template ( with react + ant-design )",
+              "3. h5 template (with react + ant-mobile )",
             ],
             filter: function (val) {
               return val.toLowerCase();
@@ -358,7 +357,8 @@ program
           },
         ])
         .then(({ type }) => {
-          if (type === "only react-cli ( you can user-defined )") {
+          const typeNo = type.slice(0, 1);
+          if (typeNo === "1") {
             inquirer
               .prompt([
                 {
@@ -380,7 +380,7 @@ program
               })
               .catch((err) => console.log(err));
           } else {
-            getClone(type, name);
+            getClone(typeNo, name);
           }
         })
         .catch((error) => {
@@ -389,7 +389,6 @@ program
     });
   });
 program.parse(process.argv);
-
 ```
 
-最后发布到npm中[npm地址](https://www.npmjs.com/package/react-client-create)
+最后发布到 npm 中[npm 地址](https://www.npmjs.com/package/react-client-create)
