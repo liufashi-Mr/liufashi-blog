@@ -525,12 +525,13 @@ comments:
   valine:
     # js: https://npm.elemecdn.com/valine@1.4/dist/Valine.min.js
     path: # 全局评论地址 目前设置全局评论地址后visitor失效,这是valine的问题
-    placeholder: 快来友好评论吧~ # 评论占位提示
+    placeholder: 填写正确的邮箱便于作者联系您哦~ # 评论占位提示
     # 其他配置项按照yml格式继续填写即可 除了 [el path placeholder emojiCDN emojiMaps] 选项
     appId: M5lFrKUlT36PQVjRb0i3Mtb8-gzGzoHsz # your appId
     appKey: 295Kc2V12StMHkKQ8PyrLsJK # your appKey
-    avatar: mp
+    avatar: ''
     enableQQ: true
+    recordIP: true
 plugins:
   chat_service: gitter
   gitter:
