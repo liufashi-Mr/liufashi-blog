@@ -151,7 +151,7 @@ module.exports = {
 };
 ```
 
-&#8195;&#8195;规则配置就绪后，我们可以添加 git 的钩子，在 pre-commit 的时候执行规则。安装`npm i husky@4.3.8 lint-staged -D`。**踩坑：尽量安装该版本的 husky，我在使用 7.0.1 版本的时候 commit 无法触发改检验。**
+&#8195;&#8195;规则配置就绪后，我们可以添加 git 的钩子，在 pre-commit 的时候执行规则。安装`npm i husky@4.3.8 lint-staged -D`。**踩坑：尽量安装该版本的 husky，我在使用 7.0.1 版本的时候 commit 无法触发改检验。** 使用新版的husky需执行`husky install` 生成.husky文件，然后创建`pre-commit`和`commit-msg`文件 写入对应内容，还需要给这两个文件加上+x权限（操作权限）`chmod +x pre-commit commit-msg`
 然后`package.json`的最外层添加如下代码。
 
 ```json
