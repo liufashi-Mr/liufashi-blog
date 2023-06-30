@@ -516,7 +516,7 @@ index 66aa112..c9baf73 100755
          <% } %>
        <% } else if (item == 'source') { %>
 diff --git a/node_modules/hexo-theme-volantis/layout/_partial/head.ejs b/node_modules/hexo-theme-volantis/layout/_partial/head.ejs
-index 282fdad..568e390 100755
+index 282fdad..8a5d0e1 100755
 --- a/node_modules/hexo-theme-volantis/layout/_partial/head.ejs
 +++ b/node_modules/hexo-theme-volantis/layout/_partial/head.ejs
 @@ -26,7 +26,13 @@
@@ -534,6 +534,15 @@ index 282fdad..568e390 100755
    <%_ } _%>
    <!-- import meta -->
    <%_ if (config.import && config.import.meta){ _%>
+@@ -65,6 +71,8 @@
+         document.documentElement.setAttribute("color-scheme", userColorScheme);
+       }
+     </script>
++    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7038287597982437"
++    crossorigin="anonymous"></script>
+   <%_ } _%>
+   <%- partial('../_plugins/end-of-support/script') %>
+   <%- partial('scripts/global') %>
 diff --git a/node_modules/hexo-theme-volantis/layout/_partial/header.ejs b/node_modules/hexo-theme-volantis/layout/_partial/header.ejs
 index 32d3a64..d714dc2 100755
 --- a/node_modules/hexo-theme-volantis/layout/_partial/header.ejs
