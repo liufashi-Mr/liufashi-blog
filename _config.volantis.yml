@@ -68,9 +68,9 @@ navbar:
         - name: 友链
           icon: fas fa-link
           url: friends/
-        - name: 草帽
-          icon: iconfont icon-svggeshi-
-          url: one-piece/
+        # - name: 草帽
+        #   icon: iconfont icon-svggeshi-
+        #   url: one-piece/
   search: 搜索 # Search bar placeholder
 custom_css:
   max_width: 1160px

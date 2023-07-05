@@ -114,21 +114,21 @@ import:
   link:
     - <link rel="shortcut icon" href="https://blog.liufashi.top/img/favicon.ico">
     - <link rel="stylesheet" href="/icons/iconfont.css">
-    - <link rel="stylesheet" href="/css/footer-box.css">
-    - <div id="body">
-        <div id="section">
-          <div><img src="/img/footer-box/1.jpg" alt="" /></div>
-          <div><img src="/img/footer-box/1.jpg" alt="" /></div>
-          <div><img src="/img/footer-box/2.jpg" alt="" /></div>
-          <div><img src="/img/footer-box/3.jpg" alt="" /></div>
-          <div><img src="/img/footer-box/4.jpg" alt="" /></div>
-          <div><img src="/img/footer-box/5.jpg" alt="" /></div>
-          <div><img src="/img/footer-box/6.jpg" alt="" /></div>
-          <div><img src="/img/footer-box/1.jpg" alt="" /></div>
-          <div><img src="/img/footer-box/2.jpg" alt="" /></div>
-          <div><img src="/img/footer-box/3.jpg" alt="" /></div>
-          <div><img src="/img/footer-box/4.jpg" alt="" /></div>
-          <div><img src="/img/footer-box/5.jpg" alt="" /></div>
-          <div><img src="/img/footer-box/6.jpg" alt="" /></div>
-		    </div>
-      </div>
+    # - <link rel="stylesheet" href="/css/footer-box.css">
+    # - <div id="body">
+    #     <div id="section">
+    #       <div><img src="/img/footer-box/1.jpg" alt="" /></div>
+    #       <div><img src="/img/footer-box/1.jpg" alt="" /></div>
+    #       <div><img src="/img/footer-box/2.jpg" alt="" /></div>
+    #       <div><img src="/img/footer-box/3.jpg" alt="" /></div>
+    #       <div><img src="/img/footer-box/4.jpg" alt="" /></div>
+    #       <div><img src="/img/footer-box/5.jpg" alt="" /></div>
+    #       <div><img src="/img/footer-box/6.jpg" alt="" /></div>
+    #       <div><img src="/img/footer-box/1.jpg" alt="" /></div>
+    #       <div><img src="/img/footer-box/2.jpg" alt="" /></div>
+    #       <div><img src="/img/footer-box/3.jpg" alt="" /></div>
+    #       <div><img src="/img/footer-box/4.jpg" alt="" /></div>
+    #       <div><img src="/img/footer-box/5.jpg" alt="" /></div>
+    #       <div><img src="/img/footer-box/6.jpg" alt="" /></div>
+		#     </div>
+    #   </div>
